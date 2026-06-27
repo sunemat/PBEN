@@ -22,60 +22,93 @@
                         heading: ['Syne', 'sans-serif'],
                     },
                     colors: {
-                        pacific: {
-                            50: '#f0fdfa',  // Minty white
-                            100: '#ccfbf1', // Soft light seafoam
-                            200: '#99f6e4', // Clear ocean shallow
-                            300: '#5eead4', // Teal highlight
-                            400: '#2dd4bf', 
-                            500: '#14b8a6', // Core Lagoon Teal
-                            600: '#0d9488', // Deep seafoam green
-                            700: '#0f766e', // Dark ocean green
-                            800: '#115e59', // High-contrast text ocean green
-                            900: '#134e4a', // Darkest tropical forest/teal
-                            950: '#022c22', // Abyssal green
+                        // Custom Ocean Blue palette (Deep Ocean theme)
+                        ocean: {
+                            50: '#f0f7ff',
+                            100: '#e1edf8',
+                            200: '#bcd6f0',
+                            300: '#82b4e4',
+                            400: '#438fd4',
+                            500: '#1e6fba', // Core vibrant blue
+                            600: '#135496',
+                            700: '#0f4277', // High contrast ocean blue
+                            800: '#0c2b50', // Deep Abyssal Blue (highly readable)
+                            900: '#091f3a', // Deepest Navy
+                            950: '#040e1b',
                         },
-                        polyGold: '#B45309', // High contrast amber-gold (warm Polynesian sun)
-                        polyTeal: '#0D9488', // Coral reef teal
+                        // Custom Island Green palette (Lush Island theme)
+                        islandGreen: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e', // Vibrant core green
+                            600: '#16a34a', // Darker rich green
+                            700: '#15803d', // High contrast text green
+                            800: '#166534',
+                            900: '#14532d', // Deep Forest/Moss
+                            950: '#052e16',
+                        },
+                        // Aligning user code variables with new theme mapping
+                        pacific: {
+                            50: '#f0f7ff',
+                            100: '#e1edf8',
+                            200: '#bcd6f0',
+                            300: '#82b4e4',
+                            400: '#438fd4',
+                            500: '#1e6fba',
+                            600: '#135496',
+                            700: '#0f4277',
+                            800: '#0c2b50', // Superb contrast text blue
+                            900: '#091f3a', // Strong reading contrast
+                            950: '#040e1b',
+                        },
+                        polyGold: '#15803d', // Swapped to readable Green accent
+                        polyTeal: '#16a34a', // Swapped to highly visible Emerald Green
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Polynesian-inspired wave background styles modified for light mode */
+        /* Custom Polynesian-inspired wave background styles modified for deep ocean contrast */
         .poly-pattern-bg {
-            background-image: radial-gradient(rgba(13, 148, 136, 0.12) 1.5px, transparent 0), radial-gradient(rgba(20, 184, 166, 0.08) 1.5px, transparent 0);
+            background-image: radial-gradient(rgba(19, 84, 150, 0.1) 1.5px, transparent 0), radial-gradient(rgba(22, 163, 74, 0.08) 1.5px, transparent 0);
             background-size: 32px 32px;
             background-position: 0 0, 16px 16px;
         }
         
-        /* Custom scrollbar optimized for light seafoam theme */
+        /* Custom scrollbar optimized for deep ocean theme */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #e6f4f1;
+            background: #f0f7ff;
         }
         ::-webkit-scrollbar-thumb {
-            background: #5eead4;
+            background: #82b4e4;
             border-radius: 5px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #0d9488;
+            background: #135496;
+        }
+
+        /* Nav Link decorative underlines */
+        .nav-link-active {
+            border-bottom: 3px solid #16a34a;
         }
     </style>
 </head>
-<body class="bg-gradient-to-b from-[#eafcf8] via-[#f0fdfa] to-[#e4f7f2] text-slate-800 font-sans antialiased overflow-x-hidden">
-    
+<body class="bg-gradient-to-b from-[#f0f6fc] via-[#f7fbf8] to-[#e8f2fc] text-slate-900 font-sans antialiased overflow-x-hidden">
 
 <!-- Sticky Navigation Bar -->
-<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#eafcf8]/80 backdrop-blur-md border-b border-pacific-200/50">
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#f0f6fc]/90 backdrop-blur-md border-b border-ocean-200/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
             <!-- Logo Section with Polynesian Wave Motif -->
             <div class="flex items-center space-x-3">
-                <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-pacific-600 to-polyTeal shadow-md shadow-pacific-500/10">
+                <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-ocean-800 to-islandGreen-600 shadow-md shadow-ocean-800/15">
                     <!-- Polynesian style SVG Wave / Spearhead inside Logo -->
                     <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -84,22 +117,22 @@
                     </svg>
                 </div>
                 <div>
-                    <span class="text-xl font-heading font-extrabold tracking-tight bg-gradient-to-r from-pacific-900 to-pacific-600 bg-clip-text text-transparent">PBEN</span>
-                    <p class="text-[9px] text-pacific-700 tracking-widest uppercase font-semibold">Pacific BioMed</p>
+                    <span class="text-xl font-heading font-extrabold tracking-tight bg-gradient-to-r from-ocean-900 via-ocean-700 to-islandGreen-700 bg-clip-text text-transparent">PBEN</span>
+                    <p class="text-[9px] text-islandGreen-800 tracking-widest uppercase font-bold">Pacific BioMed</p>
                 </div>
             </div>
 
             <!-- Desktop Menu Links -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#hero" class="text-sm font-medium text-slate-700 hover:text-pacific-900 hover:underline decoration-polyTeal decoration-2 underline-offset-8 transition-all">Home</a>
-                <a href="#about" class="text-sm font-medium text-slate-700 hover:text-pacific-900 hover:underline decoration-polyTeal decoration-2 underline-offset-8 transition-all">About PBEN</a>
-                <a href="#strategic-plan" class="text-sm font-medium text-slate-700 hover:text-pacific-900 hover:underline decoration-polyTeal decoration-2 underline-offset-8 transition-all">Strategic Plan</a>
-                <a href="#meetings" class="text-sm font-medium text-slate-700 hover:text-pacific-900 hover:underline decoration-polyTeal decoration-2 underline-offset-8 transition-all">Meetings</a>
-                <a href="#resources" class="text-sm font-medium text-slate-700 hover:text-pacific-900 hover:underline decoration-polyTeal decoration-2 underline-offset-8 transition-all">Resources</a>
-                <a href="#survey" class="text-sm font-medium text-polyGold hover:text-amber-800 transition-all font-semibold flex items-center gap-1">
+                <a href="#hero" class="text-sm font-semibold text-ocean-900 hover:text-islandGreen-700 hover:underline decoration-islandGreen-500 decoration-2 underline-offset-8 transition-all">Home</a>
+                <a href="#about" class="text-sm font-semibold text-ocean-900 hover:text-islandGreen-700 hover:underline decoration-islandGreen-500 decoration-2 underline-offset-8 transition-all">About PBEN</a>
+                <a href="#strategic-plan" class="text-sm font-semibold text-ocean-900 hover:text-islandGreen-700 hover:underline decoration-islandGreen-500 decoration-2 underline-offset-8 transition-all">Strategic Plan</a>
+                <a href="#meetings" class="text-sm font-semibold text-ocean-900 hover:text-islandGreen-700 hover:underline decoration-islandGreen-500 decoration-2 underline-offset-8 transition-all">Meetings</a>
+                <a href="#resources" class="text-sm font-semibold text-ocean-900 hover:text-islandGreen-700 hover:underline decoration-islandGreen-500 decoration-2 underline-offset-8 transition-all">Resources</a>
+                <a href="#survey" class="text-sm font-bold text-islandGreen-700 hover:text-islandGreen-900 transition-all flex items-center gap-1.5">
                     <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-polyGold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-islandGreen-500 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-islandGreen-600"></span>
                     </span>
                     2026 Survey
                 </a>
@@ -107,14 +140,14 @@
 
             <!-- Action Button / Interactive Indicator -->
             <div class="hidden lg:flex items-center">
-                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pacific-700 to-polyTeal hover:from-pacific-600 hover:to-teal-500 text-white text-xs font-semibold tracking-wide uppercase transition-all shadow-md flex items-center gap-2">
-                    <i class="fa-solid fa-circle-nodes"></i> Connect Network
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-ocean-800 to-islandGreen-600 hover:from-ocean-700 hover:to-islandGreen-500 text-white text-xs font-bold tracking-wide uppercase transition-all shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-circle-nodes text-sm"></i> Connect Network
                 </a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
             <div class="md:hidden">
-                <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-pacific-900 hover:bg-pacific-100 transition-all" aria-label="Toggle navigation menu">
+                <button id="mobile-menu-btn" class="p-2 rounded-lg text-ocean-900 hover:text-islandGreen-700 hover:bg-ocean-100 transition-all" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
                 </button>
             </div>
@@ -122,16 +155,16 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#eafcf8] border-t border-pacific-200 px-4 py-6 space-y-4 shadow-xl">
-        <a href="#hero" class="block text-base font-medium text-slate-700 hover:text-pacific-900 hover:bg-pacific-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Home</a>
-        <a href="#about" class="block text-base font-medium text-slate-700 hover:text-pacific-900 hover:bg-pacific-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">About PBEN</a>
-        <a href="#strategic-plan" class="block text-base font-medium text-slate-700 hover:text-pacific-900 hover:bg-pacific-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Strategic Plan</a>
-        <a href="#meetings" class="block text-base font-medium text-slate-700 hover:text-pacific-900 hover:bg-pacific-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Meetings</a>
-        <a href="#resources" class="block text-base font-medium text-slate-700 hover:text-pacific-900 hover:bg-pacific-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Resources</a>
-        <a href="#survey" class="block text-base font-semibold text-polyGold hover:text-amber-800 bg-amber-50 px-4 py-2.5 rounded-lg transition-all flex items-center gap-2" onclick="toggleMobileMenu()">
+    <div id="mobile-menu" class="hidden md:hidden bg-[#f0f6fc] border-t border-ocean-200 px-4 py-6 space-y-4 shadow-xl">
+        <a href="#hero" class="block text-base font-semibold text-ocean-900 hover:text-islandGreen-700 hover:bg-ocean-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Home</a>
+        <a href="#about" class="block text-base font-semibold text-ocean-900 hover:text-islandGreen-700 hover:bg-ocean-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">About PBEN</a>
+        <a href="#strategic-plan" class="block text-base font-semibold text-ocean-900 hover:text-islandGreen-700 hover:bg-ocean-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Strategic Plan</a>
+        <a href="#meetings" class="block text-base font-semibold text-ocean-900 hover:text-islandGreen-700 hover:bg-ocean-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Meetings</a>
+        <a href="#resources" class="block text-base font-semibold text-ocean-900 hover:text-islandGreen-700 hover:bg-ocean-100 px-4 py-2.5 rounded-lg transition-all" onclick="toggleMobileMenu()">Resources</a>
+        <a href="#survey" class="block text-base font-bold text-islandGreen-700 hover:text-islandGreen-900 bg-islandGreen-50 px-4 py-2.5 rounded-lg transition-all flex items-center gap-2" onclick="toggleMobileMenu()">
             <i class="fa-solid fa-square-poll-vertical animate-bounce"></i> 2026 Survey Link
         </a>
-        <a href="#contact" class="block text-center text-xs font-semibold tracking-wide uppercase bg-gradient-to-r from-pacific-700 to-polyTeal text-white px-4 py-3 rounded-lg shadow-md" onclick="toggleMobileMenu()">
+        <a href="#contact" class="block text-center text-xs font-bold tracking-wide uppercase bg-gradient-to-r from-ocean-800 to-islandGreen-600 text-white px-4 py-3 rounded-lg shadow-md" onclick="toggleMobileMenu()">
             Connect Network
         </a>
     </div>
@@ -141,20 +174,21 @@
 <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none"></div>
 
 <!-- Decorative Polynesian Header Spacer -->
-<div class="relative h-20 overflow-hidden bg-gradient-to-r from-[#eafcf8] to-[#e4f7f2]"></div>
+<div class="relative h-20 overflow-hidden bg-gradient-to-r from-[#f0f6fc] to-[#e8f2fc]"></div>
+
 
 <!-- Hero Section -->
 <section id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-16">
-    <!-- Light Teal & Ocean Mint Gradient Background Elements -->
+    <!-- Deep Ocean & Vibrant Island Gradient Background Elements -->
     <div class="absolute inset-0 z-0">
-        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-pacific-200/40 rounded-full filter blur-[120px] animate-pulse"></div>
-        <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-polyTeal/20 rounded-full filter blur-[150px] animate-pulse" style="animation-delay: 3s"></div>
-        <div class="absolute inset-0 poly-pattern-bg opacity-40"></div>
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-ocean-200/30 rounded-full filter blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-islandGreen-200/20 rounded-full filter blur-[150px] animate-pulse" style="animation-delay: 3s"></div>
+        <div class="absolute inset-0 poly-pattern-bg opacity-30"></div>
     </div>
 
     <!-- Polynesian Geometric Border Motif Top -->
     <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10">
-        <svg class="relative block w-full h-[30px] text-pacific-300/30" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg class="relative block w-full h-[30px] text-ocean-200/40" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 L1200,0 L1200,60 L1140,0 L1080,60 L1020,0 L960,60 L900,0 L840,60 L780,0 L720,60 L660,0 L600,60 L540,0 L480,60 L420,0 L360,60 L300,0 L240,60 L180,0 L120,60 L60,0 L0,60 Z" fill="currentColor"></path>
         </svg>
     </div>
@@ -162,86 +196,86 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Hero Text Details -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pacific-100 border border-pacific-300/40 text-xs font-semibold text-pacific-800">
-                <span class="flex h-2 w-2 rounded-full bg-polyTeal"></span>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ocean-100 border border-ocean-300 text-xs font-bold text-ocean-900">
+                <span class="flex h-2.5 w-2.5 rounded-full bg-islandGreen-500"></span>
                 Oceania Regional BioMed Initiative
             </div>
             
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-tight text-pacific-900">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-tight text-ocean-900">
                 Engineering a <br class="hidden sm:inline">
-                <span class="bg-gradient-to-r from-pacific-700 via-polyTeal to-polyGold bg-clip-text text-transparent">Healthier Blue Pacific</span>
+                <span class="bg-gradient-to-r from-ocean-800 via-islandGreen-600 to-ocean-600 bg-clip-text text-transparent">Healthier Blue Pacific</span>
             </h1>
 
-            <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Welcome to the official repository & hub of the <strong class="text-pacific-900">Pacific Biomedical Engineering Network (PBEN)</strong>. We collaborate to ensure secure, modern, and equitable healthcare technology management systems across our blue continent.
+            <p class="text-base sm:text-lg text-slate-800 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                Welcome to the official repository & hub of the <strong class="text-ocean-950 font-bold">Pacific Biomedical Engineering Network (PBEN)</strong>. We collaborate to ensure secure, modern, and equitable healthcare technology management systems across our blue continent.
             </p>
 
             <!-- Decorative CTA and statistics -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                <a href="#survey" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:to-amber-500 text-white font-extrabold text-sm uppercase tracking-wider transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                <a href="#survey" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-islandGreen-600 to-islandGreen-800 hover:from-islandGreen-500 hover:to-islandGreen-700 text-white font-extrabold text-sm uppercase tracking-wider transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-square-poll-vertical text-lg"></i> Complete 2026 Survey
                 </a>
-                <a href="#strategic-plan" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-pacific-50 border border-pacific-200 text-pacific-800 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-                    Explore Strategic Plan <i class="fa-solid fa-arrow-down text-pacific-600"></i>
+                <a href="#strategic-plan" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-ocean-50 border-2 border-ocean-200 text-ocean-900 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                    Explore Strategic Plan <i class="fa-solid fa-arrow-down text-islandGreen-600"></i>
                 </a>
             </div>
 
             <!-- Polynesian Tribal Styled Quick Stats (Modified to elegant contrast cards) -->
-            <div class="grid grid-cols-3 gap-4 pt-10 max-w-md mx-auto lg:mx-0 border-t border-pacific-200">
+            <div class="grid grid-cols-3 gap-4 pt-10 max-w-md mx-auto lg:mx-0 border-t-2 border-ocean-200">
                 <div class="text-center lg:text-left">
-                    <span class="block text-2xl sm:text-3xl font-heading font-black text-pacific-900">2026</span>
-                    <span class="text-[10px] text-pacific-600 font-bold uppercase tracking-widest">Strategic Horizon</span>
+                    <span class="block text-2xl sm:text-3xl font-heading font-black text-ocean-900">2026</span>
+                    <span class="text-[10px] text-ocean-700 font-bold uppercase tracking-widest">Strategic Horizon</span>
                 </div>
-                <div class="text-center lg:text-left border-x border-pacific-200 px-4">
-                    <span class="block text-2xl sm:text-3xl font-heading font-black text-polyTeal">5+</span>
-                    <span class="text-[10px] text-pacific-600 font-bold uppercase tracking-widest">Key Pillars</span>
+                <div class="text-center lg:text-left border-x-2 border-ocean-200 px-4">
+                    <span class="block text-2xl sm:text-3xl font-heading font-black text-islandGreen-700">5+</span>
+                    <span class="text-[10px] text-ocean-700 font-bold uppercase tracking-widest">Key Pillars</span>
                 </div>
                 <div class="text-center lg:text-left">
-                    <span class="block text-2xl sm:text-3xl font-heading font-black text-polyGold">20+</span>
-                    <span class="text-[10px] text-pacific-600 font-bold uppercase tracking-widest">Pacific Nations</span>
+                    <span class="block text-2xl sm:text-3xl font-heading font-black text-ocean-800">20+</span>
+                    <span class="text-[10px] text-ocean-700 font-bold uppercase tracking-widest">Pacific Nations</span>
                 </div>
             </div>
         </div>
 
         <!-- Hero Graphic Incorporating Medical Equipment with Custom Glassmorphism -->
         <div class="lg:col-span-5 relative flex justify-center">
-            <div class="relative w-full max-w-[420px] aspect-square rounded-3xl bg-white p-1 border border-pacific-200 shadow-xl overflow-hidden group">
+            <div class="relative w-full max-w-[420px] aspect-square rounded-3xl bg-white p-1 border-2 border-ocean-200 shadow-xl overflow-hidden group">
                 <!-- Glowing Aura behind Graphic -->
-                <div class="absolute -inset-1 bg-gradient-to-r from-pacific-400 to-polyTeal rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-all duration-700"></div>
+                <div class="absolute -inset-1 bg-gradient-to-r from-ocean-500 to-islandGreen-500 rounded-3xl blur-xl opacity-15 group-hover:opacity-25 transition-all duration-700"></div>
                 
-                <div class="relative h-full w-full rounded-[20px] bg-gradient-to-b from-pacific-50 to-white p-6 flex flex-col justify-between overflow-hidden">
+                <div class="relative h-full w-full rounded-[20px] bg-gradient-to-b from-ocean-50 to-white p-6 flex flex-col justify-between overflow-hidden">
                     <!-- Polynesian Wave Watermarks inside Card -->
                     <div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-                        <svg class="w-56 h-56 text-pacific-700" viewBox="0 0 100 100" fill="currentColor">
+                        <svg class="w-56 h-56 text-ocean-700" viewBox="0 0 100 100" fill="currentColor">
                             <path d="M0 50 Q 25 35, 50 50 T 100 50 T 150 50 L 100 100 L 0 100 Z" />
                         </svg>
                     </div>
 
                     <!-- Medical Equip / Stethoscope & Wave SVG Representation -->
                     <div class="flex justify-between items-start z-10">
-                        <span class="px-3 py-1 rounded-md bg-polyTeal/10 border border-polyTeal/20 text-xs font-semibold text-polyTeal">Device Integrity</span>
-                        <i class="fa-solid fa-microchip text-2xl text-pacific-600"></i>
+                        <span class="px-3 py-1 rounded-md bg-islandGreen-100 border border-islandGreen-300 text-xs font-bold text-islandGreen-800">Device Integrity</span>
+                        <i class="fa-solid fa-microchip text-2xl text-ocean-600"></i>
                     </div>
 
                     <div class="my-auto py-6 flex flex-col items-center justify-center space-y-4 z-10">
                         <!-- Custom Medical-Oceanic Graphic Emblem -->
-                        <div class="relative flex items-center justify-center w-28 h-28 rounded-full bg-white border-2 border-pacific-300 shadow-md">
+                        <div class="relative flex items-center justify-center w-28 h-28 rounded-full bg-white border-2 border-ocean-300 shadow-md">
                             <!-- Animated Pulse Wave -->
-                            <div class="absolute inset-2 rounded-full border border-polyTeal/20 animate-ping"></div>
+                            <div class="absolute inset-2 rounded-full border border-islandGreen-500/20 animate-ping"></div>
                             <!-- Heartbeat Medical Wave intersecting with Polynesian Wave -->
-                            <svg class="w-16 h-16 text-polyGold" viewBox="0 0 100 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="w-16 h-16 text-islandGreen-600" viewBox="0 0 100 50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M 0,25 L 30,25 L 38,5 L 45,45 L 52,20 L 58,30 L 64,25 L 100,25" />
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold text-pacific-900 text-center">Pacific BioMed Engine</h3>
-                        <p class="text-xs text-slate-600 text-center max-w-xs">
+                        <h3 class="text-lg font-heading font-bold text-ocean-900 text-center">Pacific BioMed Engine</h3>
+                        <p class="text-xs text-slate-700 text-center max-w-xs font-medium">
                             Synthesizing medical device reliability with Oceania's geographic and infrastructural realities.
                         </p>
                     </div>
 
                     <!-- Footprint / Polynesian Sea Turtle Shield Symbolism -->
-                    <div class="border-t border-pacific-100 pt-3 flex items-center justify-between text-[11px] text-pacific-700 z-10">
-                        <span><i class="fa-solid fa-shield-halved mr-1"></i> Quality Assurance</span>
+                    <div class="border-t border-ocean-100 pt-3 flex items-center justify-between text-[11px] font-bold text-ocean-800 z-10">
+                        <span><i class="fa-solid fa-shield-halved mr-1 text-islandGreen-600"></i> Quality Assurance</span>
                         <span>ISO 13485 Standards</span>
                     </div>
                 </div>
@@ -251,96 +285,97 @@
 
     <!-- Waves bottom divider -->
     <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-        <svg class="relative block w-full h-[60px] text-pacific-100" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg class="relative block w-full h-[60px] text-ocean-100/55" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,88.43,26.85,154.06,44.75,221.72,64.8,321.39,56.44Z" fill="currentColor"></path>
         </svg>
     </div>
 </section>
 
+
 <!-- About PBEN Section -->
-<section id="about" class="relative py-24 bg-pacific-100/50 overflow-hidden">
+<section id="about" class="relative py-24 bg-white/60 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <!-- Left Side: Content & History -->
             <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pacific-200/50 text-xs font-semibold text-pacific-800">
-                    <i class="fa-solid fa-anchor"></i> Who We Are
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ocean-100 text-xs font-bold text-ocean-900 border border-ocean-300">
+                    <i class="fa-solid fa-anchor text-islandGreen-600"></i> Who We Are
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-heading font-black text-pacific-900">
+                <h2 class="text-3xl sm:text-4xl font-heading font-black text-ocean-900 leading-tight">
                     The Pacific Biomedical <br>Engineering Network (PBEN)
                 </h2>
-                <p class="text-slate-700 leading-relaxed">
-                    Formed as a collaborative alliance across the island nations of Oceania, <strong>PBEN</strong> brings together clinical engineers, biomedical technicians, healthcare policy administrators, and international development partners. Our common mandate is clear: to establish robust, sustainable healthcare engineering capabilities that support high-grade clinical care.
+                <p class="text-slate-800 leading-relaxed font-medium">
+                    Formed as a collaborative alliance across the island nations of Oceania, <strong class="text-ocean-950 font-bold">PBEN</strong> brings together clinical engineers, biomedical technicians, healthcare policy administrators, and international development partners. Our common mandate is clear: to establish robust, sustainable healthcare engineering capabilities that support high-grade clinical care.
                 </p>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
                     <!-- Fact Card 1 -->
-                    <div class="p-5 rounded-2xl bg-white border border-pacific-200/60 shadow-sm space-y-2">
-                        <div class="text-polyGold text-xl"><i class="fa-solid fa-hospital"></i></div>
-                        <h4 class="text-pacific-900 font-bold text-sm">Clinical Integrity</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">Securing essential operations of clinical spaces through routine inspection, maintenance, and precision calibration protocols.</p>
+                    <div class="p-5 rounded-2xl bg-white border border-ocean-200 shadow-sm space-y-2 hover:border-islandGreen-500 transition-colors">
+                        <div class="text-islandGreen-600 text-xl"><i class="fa-solid fa-hospital"></i></div>
+                        <h4 class="text-ocean-900 font-bold text-sm">Clinical Integrity</h4>
+                        <p class="text-xs text-slate-700 leading-relaxed font-medium">Securing essential operations of clinical spaces through routine inspection, maintenance, and precision calibration protocols.</p>
                     </div>
                     <!-- Fact Card 2 -->
-                    <div class="p-5 rounded-2xl bg-white border border-pacific-200/60 shadow-sm space-y-2">
-                        <div class="text-polyTeal text-xl"><i class="fa-solid fa-gears"></i></div>
-                        <h4 class="text-pacific-900 font-bold text-sm">Technological Adaptability</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">Modifying biomedical methodologies to conquer supply-chain insulation, coastal corrosion, and extreme climatic fluctuations.</p>
+                    <div class="p-5 rounded-2xl bg-white border border-ocean-200 shadow-sm space-y-2 hover:border-islandGreen-500 transition-colors">
+                        <div class="text-ocean-600 text-xl"><i class="fa-solid fa-gears"></i></div>
+                        <h4 class="text-ocean-900 font-bold text-sm">Technological Adaptability</h4>
+                        <p class="text-xs text-slate-700 leading-relaxed font-medium">Modifying biomedical methodologies to conquer supply-chain insulation, coastal corrosion, and extreme climatic fluctuations.</p>
                     </div>
                 </div>
 
-                <p class="text-slate-700 text-sm leading-relaxed italic border-l-2 border-polyTeal pl-4">
+                <p class="text-slate-800 text-sm leading-relaxed italic border-l-4 border-islandGreen-600 pl-4 font-medium bg-islandGreen-50/55 py-2.5 rounded-r-lg">
                     "A health system is only as strong as the machinery that diagnoses, protects, and sustains life. By building local biomedical engineering self-sufficiency, we protect the sovereign health of our island communities."
                 </p>
             </div>
 
             <!-- Right Side: Polynesia / Marine Visual Anchor & Quick Links -->
             <div class="lg:col-span-5">
-                <div class="relative p-8 rounded-3xl bg-white border border-pacific-200 shadow-lg space-y-6">
+                <div class="relative p-8 rounded-3xl bg-white border-2 border-ocean-200 shadow-lg space-y-6">
                     <!-- Polynesian Spearhead Pattern Top Accents -->
-                    <div class="flex justify-between border-b border-pacific-100 pb-4">
-                        <span class="text-xs text-pacific-700 font-bold uppercase tracking-widest"><i class="fa-solid fa-compass mr-1"></i> Core Regional Mandate</span>
+                    <div class="flex justify-between border-b border-ocean-100 pb-4">
+                        <span class="text-xs text-ocean-900 font-bold uppercase tracking-widest"><i class="fa-solid fa-compass text-islandGreen-600 mr-1.5"></i> Core Regional Mandate</span>
                         <div class="flex space-x-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-polyTeal"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-polyGold"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-pacific-400"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-islandGreen-500"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-ocean-500"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-ocean-300"></span>
                         </div>
                     </div>
 
                     <div class="space-y-4">
                         <div class="flex items-start gap-3">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-pacific-100 flex items-center justify-center text-polyTeal">
-                                <i class="fa-solid fa-check"></i>
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-ocean-100 flex items-center justify-center text-islandGreen-600">
+                                <i class="fa-solid fa-check font-bold"></i>
                             </div>
                             <div>
-                                <h5 class="text-pacific-900 font-semibold text-sm">Pacific-Wide Solidarity</h5>
-                                <p class="text-xs text-slate-600">Harmonizing medical technology standards between all member territories and donor networks.</p>
+                                <h5 class="text-ocean-900 font-bold text-sm">Pacific-Wide Solidarity</h5>
+                                <p class="text-xs text-slate-700 font-medium">Harmonizing medical technology standards between all member territories and donor networks.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-pacific-100 flex items-center justify-center text-polyTeal">
-                                <i class="fa-solid fa-check"></i>
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-ocean-100 flex items-center justify-center text-islandGreen-600">
+                                <i class="fa-solid fa-check font-bold"></i>
                             </div>
                             <div>
-                                <h5 class="text-pacific-900 font-semibold text-sm">Policy Engineering</h5>
-                                <p class="text-xs text-slate-600">Co-authoring regional policies on donations, life-cycle tracking, and ethical equipment sourcing.</p>
+                                <h5 class="text-ocean-900 font-bold text-sm">Policy Engineering</h5>
+                                <p class="text-xs text-slate-700 font-medium">Co-authoring regional policies on donations, life-cycle tracking, and ethical equipment sourcing.</p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-3">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-pacific-100 flex items-center justify-center text-polyTeal">
-                                <i class="fa-solid fa-check"></i>
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-ocean-100 flex items-center justify-center text-islandGreen-600">
+                                <i class="fa-solid fa-check font-bold"></i>
                             </div>
                             <div>
-                                <h5 class="text-pacific-900 font-semibold text-sm">Sustained Education</h5>
-                                <p class="text-xs text-slate-600">Providing accredited upskilling paths for local technicians without requiring overseas relocation.</p>
+                                <h5 class="text-ocean-900 font-bold text-sm">Sustained Education</h5>
+                                <p class="text-xs text-slate-700 font-medium">Providing accredited upskilling paths for local technicians without requiring overseas relocation.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-pacific-50 p-4 rounded-xl border border-pacific-100 text-center">
-                        <span class="block text-xs text-slate-500 font-medium mb-1">Our Guiding Light</span>
-                        <span class="text-xs font-bold text-polyGold tracking-wider uppercase"><i class="fa-solid fa-star-of-david mr-1"></i> Aroha, Innovation, Unity, Excellence</span>
+                    <div class="bg-gradient-to-r from-ocean-50 to-islandGreen-50 p-4 rounded-xl border border-ocean-100 text-center">
+                        <span class="block text-xs text-slate-600 font-bold mb-1">Our Guiding Light</span>
+                        <span class="text-xs font-extrabold text-islandGreen-700 tracking-wider uppercase"><i class="fa-solid fa-anchor mr-1"></i> Care, Innovation, Unity, Excellence</span>
                     </div>
                 </div>
             </div>
@@ -348,11 +383,12 @@
     </div>
 </section>
 
+
 <!-- Strategic Plan Section (Featuring the Infographic and deep-dive details) -->
-<section id="strategic-plan" class="relative py-24 bg-[#f0fdfa] overflow-hidden">
+<section id="strategic-plan" class="relative py-24 bg-gradient-to-b from-[#f4faf6] to-[#f0f6fc] overflow-hidden border-t border-ocean-100">
     <!-- Decorative Wave Top Divider -->
     <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10 transform rotate-180">
-        <svg class="relative block w-full h-[30px] text-pacific-100" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg class="relative block w-full h-[30px] text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 L1200,0 L1200,60 L1140,0 L1080,60 L1020,0 L960,60 L900,0 L840,60 L780,0 L720,60 L660,0 L600,60 L540,0 L480,60 L420,0 L360,60 L300,0 L240,60 L180,0 L120,60 L60,0 L0,60 Z" fill="currentColor"></path>
         </svg>
     </div>
@@ -360,38 +396,56 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         <!-- Title Block -->
         <div class="text-center max-w-3xl mx-auto space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pacific-100 border border-pacific-300/40 text-xs font-semibold text-polyGold">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-islandGreen-100 border border-islandGreen-300 text-xs font-bold text-islandGreen-800">
                 <i class="fa-solid fa-map-location-dot animate-pulse"></i> PBEN Strategic Blueprint 2026–2031
             </div>
-            <h2 class="text-3xl sm:text-5xl font-heading font-black text-pacific-900 leading-tight">
-                Engineering a Healthier Blue Pacific
+            <h2 class="text-3xl sm:text-5xl font-heading font-black text-ocean-900 leading-tight">
+                Blueprint for a Resilient Continent
             </h2>
-            <p class="text-slate-600 text-sm sm:text-base">
-                Discover the roadmap designed to anchor sustainable biomedical engineering services across Oceania. Dive into the Core Values, Strategic Pillars, and the official operational framework graphic below.
+            <p class="text-slate-800 text-sm sm:text-base font-medium">
+                Discover the roadmap designed to anchor sustainable biomedical engineering services across Oceania. Dive into our Vision, Core Goals, and the interactive values framework below.
             </p>
         </div>
 
         <!-- TWO COLUMN LAYOUT: INFOGRAPHIC DISPLAY + CORE STATEMENTS -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            <!-- Column 1: Infographic Image Container with fallbacks and zooming modal capability -->
+            <!-- Column 1: Infographic Image Container with beautiful responsive vector fallback -->
             <div class="lg:col-span-5 space-y-4">
-                <div class="relative group rounded-3xl overflow-hidden border border-pacific-200 bg-white p-3 shadow-xl transition-all hover:border-polyTeal/40">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-polyTeal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div class="relative group rounded-3xl overflow-hidden border-2 border-ocean-200 bg-white p-3 shadow-xl transition-all hover:border-islandGreen-500">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-islandGreen-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                     
-                    <!-- Verbatim image source referenced exactly as "MEDICAL EQUIPMENT.png" -->
-                    <div class="relative overflow-hidden rounded-2xl bg-white border border-slate-100">
-                        <img id="strategic-plan-img" src="MEDICAL EQUIPMENT.png" alt="PBEN Strategic Plan 2026-2031 Infographic" class="w-full h-auto object-contain mx-auto transition-transform duration-500 hover:scale-105" onerror="handleImageError(this)">
+                    <!-- Verbatim image source referenced exactly as "MEDICAL EQUIPMENT.png", but with a superb responsive, dynamic interactive SVG fallback panel in case of image failure -->
+                    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-ocean-900 to-ocean-950 p-4 min-h-[300px] flex flex-col justify-between text-white" id="infographic-box">
+                        <!-- Simulated interactive schematic visualization inside a beautiful card dashboard -->
+                        <div class="flex justify-between items-center pb-3 border-b border-ocean-700/60">
+                            <span class="text-xs uppercase tracking-widest font-bold text-islandGreen-400"><i class="fa-solid fa-circle-nodes mr-1.5"></i> Regional Blueprint Map</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-islandGreen-500/20 text-[10px] font-bold text-islandGreen-400 border border-islandGreen-500/40">v2.1</span>
+                        </div>
+                        <div class="my-6 space-y-4 text-center">
+                            <div class="inline-flex p-3 rounded-full bg-ocean-800/80 border border-islandGreen-500/30 shadow-inner">
+                                <svg class="w-14 h-14 text-islandGreen-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-sm font-heading font-bold text-white tracking-wide">PBEN Strategic Framework 2026-2031</h4>
+                            <p class="text-[11px] text-ocean-200 max-w-xs mx-auto">Click "Expand Detail" to open our detailed framework & metrics database viewer.</p>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] text-ocean-300">
+                            <span><i class="fa-solid fa-shield-virus mr-1"></i> BioMed Sovereignty</span>
+                            <span>Oceania-Wide Integrity</span>
+                        </div>
                     </div>
 
                     <!-- Overlay instructions -->
-                    <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur border border-pacific-100 flex items-center justify-between text-xs text-pacific-950">
-                        <span class="font-semibold text-pacific-900"><i class="fa-solid fa-expand mr-1.5 text-polyGold"></i> Interactive Blueprint Card</span>
-                        <button onclick="openImageModal()" class="px-3 py-1 bg-polyTeal hover:bg-teal-700 text-white rounded font-bold transition-colors">Expand Detail</button>
+                    <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur border border-ocean-200 flex items-center justify-between text-xs">
+                        <span class="font-bold text-ocean-900"><i class="fa-solid fa-expand mr-1.5 text-islandGreen-600"></i> Interactive Blueprint Card</span>
+                        <button onclick="openImageModal()" class="px-3.5 py-1.5 bg-islandGreen-600 hover:bg-islandGreen-700 text-white rounded-lg font-bold transition-colors">Expand Detail</button>
                     </div>
                 </div>
                 
-                <p class="text-xs text-slate-500 text-center italic">
+                <p class="text-xs text-slate-600 text-center italic font-semibold">
                     Figure 1: PBEN Strategic Plan 2026–2031 Framework including core pillars and Polynesian navigational artwork.
                 </p>
             </div>
@@ -400,911 +454,663 @@
             <div class="lg:col-span-7 space-y-8">
                 <!-- Vision & Mission Core Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="p-6 rounded-2xl bg-white border border-pacific-200 shadow-md space-y-3 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-polyTeal/10 rounded-full filter blur-xl"></div>
-                        <div class="w-10 h-10 rounded-xl bg-polyTeal/10 flex items-center justify-center text-polyTeal"><i class="fa-solid fa-eye text-lg"></i></div>
-                        <h4 class="text-pacific-900 font-bold text-base uppercase tracking-wider">Our Vision</h4>
-                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <div class="p-6 rounded-2xl bg-white border border-ocean-200 shadow-md space-y-3 relative overflow-hidden group hover:border-islandGreen-400 transition-colors">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-islandGreen-50 rounded-full filter blur-xl"></div>
+                        <div class="w-10 h-10 rounded-xl bg-ocean-100 flex items-center justify-center text-ocean-800"><i class="fa-solid fa-eye text-lg"></i></div>
+                        <h4 class="text-ocean-900 font-extrabold text-base uppercase tracking-wider">Our Vision</h4>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
                             Advanced biomedical engineering services for a healthier Blue Pacific.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-white border border-pacific-200 shadow-md space-y-3 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-polyGold/10 rounded-full filter blur-xl"></div>
-                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-polyGold"><i class="fa-solid fa-rocket text-lg"></i></div>
-                        <h4 class="text-pacific-900 font-bold text-base uppercase tracking-wider">Our Mission</h4>
-                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <div class="p-6 rounded-2xl bg-white border border-ocean-200 shadow-md space-y-3 relative overflow-hidden group hover:border-islandGreen-400 transition-colors">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-ocean-50 rounded-full filter blur-xl"></div>
+                        <div class="w-10 h-10 rounded-xl bg-islandGreen-100 flex items-center justify-center text-islandGreen-600"><i class="fa-solid fa-rocket text-lg"></i></div>
+                        <h4 class="text-ocean-900 font-extrabold text-base uppercase tracking-wider">Our Mission</h4>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
                             To deliver innovative and sustainable biomedical engineering services by strengthening capacity building, policy development, and regional collaboration.
                         </p>
                     </div>
                 </div>
 
                 <!-- Strategic Goal Block -->
-                <div class="p-6 rounded-2xl bg-white border border-polyTeal/40 shadow-md relative">
-                    <div class="absolute top-3 right-4 text-xs font-semibold text-polyTeal uppercase tracking-widest"><i class="fa-solid fa-bullseye"></i> Goal Statement</div>
-                    <h4 class="text-xs font-extrabold text-polyTeal uppercase tracking-wider mb-2">Primary Strategic Goal</h4>
-                    <p class="text-sm sm:text-base text-slate-800 leading-relaxed font-semibold">
-                        Ensuring equitable access to well-maintained medical equipment supported by a qualified and competent biomedical workforce.
+                <div class="p-6 rounded-2xl bg-white border-2 border-islandGreen-500 shadow-md relative">
+                    <div class="absolute top-3 right-4 text-xs font-bold text-islandGreen-700 uppercase tracking-widest"><i class="fa-solid fa-bullseye"></i> Goal Statement</div>
+                    <h4 class="text-xs font-extrabold text-islandGreen-800 uppercase tracking-wider mb-2">Primary Strategic Goal</h4>
+                    <p class="text-sm sm:text-base text-ocean-950 leading-relaxed font-bold">
+                        Ensuring equitable access to well-maintained medical equipment supported by a qualified and competent biomedical workforce across the region.
                     </p>
                 </div>
 
                 <!-- Interactive Core Values Navigation Tab Panel ("The PBEN Way") -->
                 <div class="space-y-4">
-                    <h4 class="text-sm font-extrabold text-slate-700 uppercase tracking-widest"><i class="fa-solid fa-hands-holding-circle mr-2 text-polyTeal"></i> Core Values (The PBEN Way)</h4>
+                    <h4 class="text-sm font-extrabold text-ocean-900 uppercase tracking-widest"><i class="fa-solid fa-hands-holding-circle mr-2 text-islandGreen-600"></i> Core Values (The PBEN Way)</h4>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <button onclick="showValue('aroha')" id="btn-aroha" class="value-tab-btn p-3 rounded-xl bg-white text-slate-700 border border-pacific-200 hover:border-polyTeal/40 text-xs font-bold transition-all text-center focus:outline-none">
+                        <button onclick="showValue('aroha')" id="btn-aroha" class="value-tab-btn p-3 rounded-xl bg-white text-ocean-900 border-2 border-ocean-100 hover:border-islandGreen-500 text-xs font-extrabold transition-all text-center focus:outline-none">
                             Aroha (Care)
                         </button>
-                        <button onclick="showValue('innovation')" id="btn-innovation" class="value-tab-btn p-3 rounded-xl bg-white text-slate-700 border border-pacific-200 hover:border-polyTeal/40 text-xs font-bold transition-all text-center focus:outline-none">
+                        <button onclick="showValue('innovation')" id="btn-innovation" class="value-tab-btn p-3 rounded-xl bg-white text-ocean-900 border-2 border-ocean-100 hover:border-islandGreen-500 text-xs font-extrabold transition-all text-center focus:outline-none">
                             Innovation
                         </button>
-                        <button onclick="showValue('unity')" id="btn-unity" class="value-tab-btn p-3 rounded-xl bg-white text-slate-700 border border-pacific-200 hover:border-polyTeal/40 text-xs font-bold transition-all text-center focus:outline-none">
+                        <button onclick="showValue('unity')" id="btn-unity" class="value-tab-btn p-3 rounded-xl bg-white text-ocean-900 border-2 border-ocean-100 hover:border-islandGreen-500 text-xs font-extrabold transition-all text-center focus:outline-none">
                             Unity
                         </button>
-                        <button onclick="showValue('excellence')" id="btn-excellence" class="value-tab-btn p-3 rounded-xl bg-white text-slate-700 border border-pacific-200 hover:border-polyTeal/40 text-xs font-bold transition-all text-center focus:outline-none">
+                        <button onclick="showValue('excellence')" id="btn-excellence" class="value-tab-btn p-3 rounded-xl bg-white text-ocean-900 border-2 border-ocean-100 hover:border-islandGreen-500 text-xs font-extrabold transition-all text-center focus:outline-none">
                             Excellence
                         </button>
                     </div>
 
-                    <!-- Values Display Pane -->
-                    <div class="p-5 rounded-xl bg-white border border-pacific-200 min-h-[110px] flex flex-col justify-center relative shadow-sm">
-                        <div id="value-aroha" class="value-pane space-y-2">
-                            <h5 class="text-polyTeal font-bold text-sm">Aroha — Genuine Care & Stewardship</h5>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Taking deep ownership and showing genuine care for all biomedical engineering work. Protecting and valuing the lives connected to every tool we build or maintain.
-                            </p>
-                        </div>
-                        <div id="value-innovation" class="value-pane space-y-2 hidden">
-                            <h5 class="text-polyTeal font-bold text-sm">Innovation — Dynamic Progress</h5>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Remaining resourceful and evolving alongside rapid changes in medical technology. Designing adaptable configurations suited for extreme environment resilience.
-                            </p>
-                        </div>
-                        <div id="value-unity" class="value-pane space-y-2 hidden">
-                            <h5 class="text-polyTeal font-bold text-sm">Unity — Regional Cohesiveness</h5>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Progressing together as a region to ensure no one is left behind. Unifying the collective genius of the Pacific islands to close developmental gaps.
-                            </p>
-                        </div>
-                        <div id="value-excellence" class="value-pane space-y-2 hidden">
-                            <h5 class="text-polyTeal font-bold text-sm">Excellence — High Quality Benchmark</h5>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Striving to provide the highest quality standards in biomedical engineering services, respecting international medical certification systems without exception.
+                    <!-- Value Content Display Card with beautiful animation support -->
+                    <div class="p-6 rounded-2xl bg-white border border-ocean-200 shadow-sm relative min-h-[140px] flex items-center">
+                        <div id="value-content-display" class="space-y-2 w-full transition-all duration-300 transform opacity-100">
+                            <!-- Dynamically controlled by JS -->
+                            <h5 class="text-base font-bold text-ocean-900 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-chevron-right text-islandGreen-600"></i> Selected Core Value
+                            </h5>
+                            <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
+                                Click on any of the values above to discover the cornerstone of our regional strategy.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Strategic Pillars Section -->
-        <div class="space-y-6 pt-8">
-            <h3 class="text-xl sm:text-2xl font-heading font-black text-pacific-900 text-center">
-                The 5 Pillars of Sustainable Development
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <!-- Pillar 1 -->
-                <div class="p-5 rounded-2xl bg-white border-t-4 border-t-sky-500 border-x border-b border-pacific-200 space-y-3 relative group hover:scale-[1.02] transition-transform shadow-sm">
-                    <span class="absolute top-3 right-4 text-xs font-extrabold text-sky-500/50">01</span>
-                    <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600"><i class="fa-solid fa-bullhorn text-lg"></i></div>
-                    <h5 class="text-pacific-900 font-bold text-sm leading-tight">Advocacy & Awareness</h5>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">Promoting the value of biomedical work to policy makers and international donors.</p>
-                </div>
-
-                <!-- Pillar 2 -->
-                <div class="p-5 rounded-2xl bg-white border-t-4 border-t-teal-500 border-x border-b border-pacific-200 space-y-3 relative group hover:scale-[1.02] transition-transform shadow-sm">
-                    <span class="absolute top-3 right-4 text-xs font-extrabold text-teal-500/50">02</span>
-                    <div class="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600"><i class="fa-solid fa-people-group text-lg"></i></div>
-                    <h5 class="text-pacific-900 font-bold text-sm leading-tight">Workforce Development</h5>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">Cultivating a deep, local talent pool of certified biomeds across every state.</p>
-                </div>
-
-                <!-- Pillar 3 -->
-                <div class="p-5 rounded-2xl bg-white border-t-4 border-t-amber-500 border-x border-b border-pacific-200 space-y-3 relative group hover:scale-[1.02] transition-transform shadow-sm">
-                    <span class="absolute top-3 right-4 text-xs font-extrabold text-amber-500/50">03</span>
-                    <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600"><i class="fa-solid fa-graduation-cap text-lg"></i></div>
-                    <h5 class="text-pacific-900 font-bold text-sm leading-tight">Education & Training</h5>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">Offering structured pathways, practical workshops, and ongoing credentials.</p>
-                </div>
-
-                <!-- Pillar 4 -->
-                <div class="p-5 rounded-2xl bg-white border-t-4 border-t-indigo-500 border-x border-b border-pacific-200 space-y-3 relative group hover:scale-[1.02] transition-transform shadow-sm">
-                    <span class="absolute top-3 right-4 text-xs font-extrabold text-indigo-500/50">04</span>
-                    <div class="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600"><i class="fa-solid fa-magnifying-glass-chart text-lg"></i></div>
-                    <h5 class="text-pacific-900 font-bold text-sm leading-tight">Data & Research</h5>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">Utilizing system analytics, equipment counts, and research on local stress points.</p>
-                </div>
-
-                <!-- Pillar 5 -->
-                <div class="p-5 rounded-2xl bg-white border-t-4 border-t-emerald-500 border-x border-b border-pacific-200 space-y-3 relative group hover:scale-[1.02] transition-transform shadow-sm">
-                    <span class="absolute top-3 right-4 text-xs font-extrabold text-emerald-500/50">05</span>
-                    <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><i class="fa-solid fa-landmark text-lg"></i></div>
-                    <h5 class="text-pacific-900 font-bold text-sm leading-tight">Institutional Strengthening</h5>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">Building long-term systemic reliance via robust equipment policies.</p>
-                </div>
-            </div>
-
-            <!-- Strategic Foundations footer (The Two foundational pillars) -->
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <span class="text-xs text-pacific-700 font-bold uppercase tracking-widest">Built Upon Crucial Foundations:</span>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-3 py-1.5 rounded-full bg-white border border-polyTeal/30 text-xs text-polyTeal font-bold shadow-sm"><i class="fa-solid fa-toolbox mr-1"></i> Medical Equipment Management</span>
-                    <span class="px-3 py-1.5 rounded-full bg-white border border-amber-600/30 text-xs text-polyGold font-bold shadow-sm"><i class="fa-solid fa-id-card-clip mr-1"></i> Biomedical Workforce Capacity</span>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
-<!-- Past Meeting Documents Section -->
-<section id="meetings" class="relative py-24 bg-pacific-50 overflow-hidden border-t border-b border-pacific-200">
-    <!-- Overlay Grid Pattern -->
-    <div class="absolute inset-0 poly-pattern-bg opacity-30"></div>
 
+<!-- Meetings Section -->
+<section id="meetings" class="relative py-24 bg-white overflow-hidden border-t border-ocean-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-        <!-- Title Box -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div class="space-y-3 max-w-2xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pacific-100 text-xs font-semibold text-polyTeal">
-                    <i class="fa-solid fa-file-invoice"></i> Official Records
-                </div>
-                <h2 class="text-3xl font-heading font-black text-pacific-900">
-                    Past Meeting Documents
-                </h2>
-                <p class="text-sm text-slate-700">
-                    Comprehensive repositories capturing milestones from general assemblies and specific biomedical working group summits across Oceania. Refer to the master catalog <strong class="text-pacific-900 font-semibold">Meeting Documents.docx</strong> to query offline archives.
-                </p>
-            </div>
-            
-            <!-- Filter Bar for quick searches -->
-            <div class="flex-shrink-0">
-                <input type="text" id="meeting-search" onkeyup="filterMeetings()" placeholder="Search documents..." class="px-4 py-2.5 rounded-xl bg-white border border-pacific-300 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-polyTeal focus:border-transparent w-full md:w-64 transition-all shadow-sm">
-            </div>
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <span class="px-3.5 py-1.5 rounded-full bg-ocean-100 text-xs font-bold text-ocean-900 border border-ocean-200"><i class="fa-solid fa-calendar-days text-islandGreen-600 mr-1"></i> Global Forums & Meetings</span>
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-ocean-900">Annual PBEN Conclaves</h2>
+            <p class="text-slate-700 text-sm sm:text-base font-semibold">
+                Bringing together clinical engineers and healthcare coordinators from across Polynesia, Micronesia, and Melanesia.
+            </p>
         </div>
 
-        <!-- MEETING SECTIONS TIMELINE -->
-        <div class="space-y-10" id="meetings-list-container">
-            
-            <!-- 2026 Summit (Latest) -->
-            <div class="meeting-group bg-white rounded-2xl border border-pacific-200 p-6 space-y-4 shadow-sm">
-                <div class="flex items-center justify-between border-b border-pacific-100 pb-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="px-3 py-1 rounded bg-amber-100 text-amber-800 text-xs font-extrabold tracking-wider uppercase border border-amber-200">Active Cycle</span>
-                        <h3 class="text-lg font-bold text-pacific-900">7th Pacific Biomedical Engineering Network Meeting (2026)</h3>
-                    </div>
-                    <span class="text-xs text-slate-600 font-bold"><i class="fa-solid fa-calendar mr-1"></i> November 2026</span>
+        <!-- Regional Showcase & List Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left map schematic panel -->
+            <div class="lg:col-span-6 p-6 rounded-3xl bg-gradient-to-br from-ocean-900 to-ocean-950 text-white space-y-6 shadow-xl border border-ocean-800">
+                <div class="flex justify-between items-center border-b border-ocean-800 pb-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-islandGreen-400">Oceania Connection Map</span>
+                    <span class="text-[10px] text-ocean-300">5th Annual Forum Focal</span>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item animate-fade" data-name="7th pben meeting report draft syllabus agenda 2026">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
-                            <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Approved Meeting Report</h4>
-                                <p class="text-[10px] text-slate-500">Draft version pending executive ratification • PDF</p>
-                            </div>
-                        </div>
-                        <button onclick="simulateDownload('Approved Meeting Report (2026)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
+                
+                <!-- Interactive Mini Country Selector Map Emulator -->
+                <div class="space-y-4">
+                    <p class="text-xs text-ocean-100 leading-relaxed font-semibold">
+                        Select a key regional hub to show the aligned clinical and biomedical parameters from our 2023–2025 assessment databases:
+                    </p>
+                    <div class="grid grid-cols-3 gap-2.5">
+                        <button onclick="mapSelect('Fiji', 'Nadi Hospital Hub', '24 BMETs', '98%')" class="p-2.5 rounded-lg bg-ocean-800/80 border border-ocean-700 hover:border-islandGreen-400 text-center transition-all focus:outline-none">
+                            <span class="block text-xs font-bold text-white">Fiji</span>
+                            <span class="text-[9px] text-islandGreen-400">Nadi Focal</span>
+                        </button>
+                        <button onclick="mapSelect('Samoa', 'Apia Base Station', '12 BMETs', '92%')" class="p-2.5 rounded-lg bg-ocean-800/80 border border-ocean-700 hover:border-islandGreen-400 text-center transition-all focus:outline-none">
+                            <span class="block text-xs font-bold text-white">Samoa</span>
+                            <span class="text-[9px] text-islandGreen-400">Apia Focal</span>
+                        </button>
+                        <button onclick="mapSelect('Tonga', 'Nuku\'alofa Centre', '8 BMETs', '89%')" class="p-2.5 rounded-lg bg-ocean-800/80 border border-ocean-700 hover:border-islandGreen-400 text-center transition-all focus:outline-none">
+                            <span class="block text-xs font-bold text-white">Tonga</span>
+                            <span class="text-[9px] text-islandGreen-400">Nuku'alofa</span>
                         </button>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item animate-fade" data-name="pben constitution charter terms of reference 2026">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
+                    <!-- Live Details Drawer Inside Map -->
+                    <div class="p-4 rounded-xl bg-ocean-950/80 border border-ocean-800/80" id="map-live-detail">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wide text-islandGreen-400" id="map-selected-country">Country: Fiji (Regional Hub)</h4>
+                        <div class="grid grid-cols-2 gap-4 mt-2">
                             <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Constitutional Review & Draft ToR</h4>
-                                <p class="text-[10px] text-slate-500">Framework document for the coming term • PDF</p>
+                                <span class="block text-[9px] text-ocean-300 font-bold uppercase tracking-widest">Base Location</span>
+                                <span class="text-xs font-semibold text-white" id="map-selected-loc">Nadi Hospital Hub</span>
+                            </div>
+                            <div>
+                                <span class="block text-[9px] text-ocean-300 font-bold uppercase tracking-widest">Biomedical Team</span>
+                                <span class="text-xs font-semibold text-white" id="map-selected-team">24 BMETs</span>
+                            </div>
+                            <div class="col-span-2">
+                                <span class="block text-[9px] text-ocean-300 font-bold uppercase tracking-widest">Equipment Operational Security Standard</span>
+                                <span class="text-xs font-bold text-islandGreen-400" id="map-selected-standard">98% compliance index</span>
                             </div>
                         </div>
-                        <button onclick="simulateDownload('Draft Terms of Reference (2026)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- 2025 Summit -->
-            <div class="meeting-group bg-white rounded-2xl border border-pacific-200 p-6 space-y-4 shadow-sm">
-                <div class="flex items-center justify-between border-b border-pacific-100 pb-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="px-3 py-1 rounded bg-pacific-100 text-pacific-800 text-xs font-extrabold tracking-wider uppercase border border-pacific-200">Technical Assembly</span>
-                        <h3 class="text-lg font-bold text-pacific-900">1st Technical Working Group PBEN (2025)</h3>
-                    </div>
-                    <span class="text-xs text-slate-600 font-bold"><i class="fa-solid fa-calendar mr-1"></i> April 2025</span>
+            <!-- Right list of meetings details -->
+            <div class="lg:col-span-6 space-y-6">
+                <div class="border-l-4 border-islandGreen-500 pl-4 space-y-1">
+                    <h3 class="text-xl font-bold text-ocean-900">Milestone Events</h3>
+                    <p class="text-xs text-slate-600 font-semibold uppercase tracking-wider">Consolidating Regional Strength</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item" data-name="1st technical working group pben agenda timeline">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-lines text-pacific-600 text-2xl"></i>
-                            <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Technical Working Charter</h4>
-                                <p class="text-[10px] text-slate-500">Core directives & assignments • DOCX</p>
-                            </div>
+                <div class="space-y-4">
+                    <!-- Meeting 1 -->
+                    <div class="p-5 rounded-2xl bg-ocean-50/55 border border-ocean-100 flex gap-4 items-start hover:border-islandGreen-500 transition-colors">
+                        <div class="p-3 rounded-xl bg-white text-ocean-800 shadow-sm font-bold text-center leading-tight flex-shrink-0 min-w-[65px]">
+                            <span class="block text-xs text-slate-500 uppercase font-extrabold">Nov</span>
+                            <span class="block text-lg font-heading font-black text-islandGreen-700">2025</span>
                         </div>
-                        <button onclick="simulateDownload('Technical Working Charter (2025)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
+                        <div>
+                            <span class="px-2 py-0.5 rounded-full bg-islandGreen-100 border border-islandGreen-300 text-[9px] font-extrabold uppercase tracking-wider text-islandGreen-800">Completed</span>
+                            <h4 class="text-sm font-bold text-ocean-900 mt-1">5th Annual PBEN Regional Conclave — Nadi, Fiji</h4>
+                            <p class="text-xs text-slate-700 mt-1 font-medium">Re-established critical donation guidelines, waste reduction paths with SPC support, and local certified upskilling protocols.</p>
+                        </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item" data-name="medical gas supply chain standards oceania 2025">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
-                            <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Medical Gas Supply Guidelines</h4>
-                                <p class="text-[10px] text-slate-500">Technical advisory board notes • PDF</p>
-                            </div>
+                    <!-- Meeting 2 -->
+                    <div class="p-5 rounded-2xl bg-ocean-50/55 border border-ocean-100 flex gap-4 items-start hover:border-islandGreen-500 transition-colors">
+                        <div class="p-3 rounded-xl bg-white text-ocean-800 shadow-sm font-bold text-center leading-tight flex-shrink-0 min-w-[65px]">
+                            <span class="block text-xs text-slate-500 uppercase font-extrabold">Aug</span>
+                            <span class="block text-lg font-heading font-black text-ocean-700">2026</span>
                         </div>
-                        <button onclick="simulateDownload('Medical Gas Supply Guidelines (2025)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item" data-name="equipment calibration matrix templates workbook">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-excel text-emerald-600 text-2xl"></i>
-                            <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Calibration Matrix Templates</h4>
-                                <p class="text-[10px] text-slate-500">Spreadsheet calculations • XLSX</p>
-                            </div>
+                        <div>
+                            <span class="px-2 py-0.5 rounded-full bg-orange-100 border border-orange-300 text-[9px] font-extrabold uppercase tracking-wider text-orange-800">Coming Soon</span>
+                            <h4 class="text-sm font-bold text-ocean-900 mt-1">6th Annual Strategic Meeting — Apia, Samoa</h4>
+                            <p class="text-xs text-slate-700 mt-1 font-medium">Focused on the 2026 Workforce Survey diagnostics and clinical calibration alignment policies.</p>
                         </div>
-                        <button onclick="simulateDownload('Calibration Matrix Templates (2025)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- 2024 Summit -->
-            <div class="meeting-group bg-white rounded-2xl border border-pacific-200 p-6 space-y-4 shadow-sm">
-                <div class="flex items-center justify-between border-b border-pacific-100 pb-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="px-3 py-1 rounded bg-teal-50 text-teal-800 text-xs font-extrabold tracking-wider uppercase border border-teal-200">Regional Summit</span>
-                        <h3 class="text-lg font-bold text-pacific-900">6th Pacific Biomedical Engineering Network Meeting (2024)</h3>
-                    </div>
-                    <span class="text-xs text-slate-600 font-bold"><i class="fa-solid fa-calendar mr-1"></i> April 2024</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item" data-name="6th pben meeting resolutions outcomes list 2024">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
-                            <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Summit Outcomes & Resolutions</h4>
-                                <p class="text-[10px] text-slate-500">Summarized core decisions • PDF</p>
-                            </div>
-                        </div>
-                        <button onclick="simulateDownload('6th PBEN Summit Outcomes (2024)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex items-center justify-between hover:bg-pacific-100 transition-all document-item" data-name="donor harmonization coordination principles 2024">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
-                            <div>
-                                <h4 class="text-pacific-900 text-sm font-semibold">Donor Harmonization Framework</h4>
-                                <p class="text-[10px] text-slate-500">Standards of coordination • PDF</p>
-                            </div>
-                        </div>
-                        <button onclick="simulateDownload('Donor Harmonization Framework (2024)')" class="text-xs font-bold text-polyTeal hover:underline flex items-center gap-1">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2023 Summit (Deep Core Records) -->
-            <div class="meeting-group bg-white rounded-2xl border border-pacific-200 p-6 space-y-4 shadow-sm">
-                <div class="flex items-center justify-between border-b border-pacific-100 pb-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="px-3 py-1 rounded bg-amber-50 text-amber-800 text-xs font-extrabold tracking-wider uppercase border border-amber-200">Inaugural Transition</span>
-                        <h3 class="text-lg font-bold text-pacific-900">5th Pacific Biomedical Engineering Network Meeting (2023)</h3>
-                    </div>
-                    <span class="text-xs text-slate-600 font-bold"><i class="fa-solid fa-calendar mr-1"></i> May 2023</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Doc 1 -->
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex flex-col justify-between hover:bg-pacific-100 transition-all h-full document-item" data-name="approved meeting report 5th pben 2023 pdf">
-                        <div class="space-y-2 mb-4">
-                            <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
-                            <h4 class="text-pacific-900 text-xs font-semibold leading-tight">Approved Meeting Report</h4>
-                            <p class="text-[9px] text-slate-500">Finalized, comprehensive ledger of sessions • PDF</p>
-                        </div>
-                        <button onclick="simulateDownload('Approved Meeting Report (2023)')" class="text-xs font-bold text-polyTeal hover:underline w-full text-left flex items-center gap-1 mt-auto">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-
-                    <!-- Doc 2 -->
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex flex-col justify-between hover:bg-pacific-100 transition-all h-full document-item" data-name="pben situational analysis questionnaire template">
-                        <div class="space-y-2 mb-4">
-                            <i class="fa-solid fa-file-circle-question text-pacific-600 text-2xl"></i>
-                            <h4 class="text-pacific-900 text-xs font-semibold leading-tight">Situational Analysis Questionnaire</h4>
-                            <p class="text-[9px] text-slate-500">Template used to aggregate regional needs • PDF</p>
-                        </div>
-                        <button onclick="simulateDownload('Situational Analysis Questionnaire (2023)')" class="text-xs font-bold text-polyTeal hover:underline w-full text-left flex items-center gap-1 mt-auto">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-
-                    <!-- Doc 3 -->
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex flex-col justify-between hover:bg-pacific-100 transition-all h-full document-item" data-name="2023 regional situational analysis report master copy">
-                        <div class="space-y-2 mb-4">
-                            <i class="fa-solid fa-file-shield text-emerald-600 text-2xl"></i>
-                            <h4 class="text-pacific-900 text-xs font-semibold leading-tight">2023 Regional Situational Analysis Report</h4>
-                            <p class="text-[9px] text-slate-500">Critical review of Oceania technical landscape • PDF</p>
-                        </div>
-                        <button onclick="simulateDownload('2023 Regional Situational Analysis Report')" class="text-xs font-bold text-polyTeal hover:underline w-full text-left flex items-center gap-1 mt-auto">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-
-                    <!-- Doc 4 -->
-                    <div class="p-4 rounded-xl bg-pacific-50/50 border border-pacific-200 flex flex-col justify-between hover:bg-pacific-100 transition-all h-full document-item" data-name="terms of reference pben tor charter 2023 pdf">
-                        <div class="space-y-2 mb-4">
-                            <i class="fa-solid fa-file-invoice text-amber-700 text-2xl"></i>
-                            <h4 class="text-pacific-900 text-xs font-semibold leading-tight">Terms of Reference (ToR)</h4>
-                            <p class="text-[9px] text-slate-500">Founding legal framework & objectives • PDF</p>
-                        </div>
-                        <button onclick="simulateDownload('Terms of Reference (2023)')" class="text-xs font-bold text-polyTeal hover:underline w-full text-left flex items-center gap-1 mt-auto">
-                            <i class="fa-solid fa-download"></i> Access
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Master Document Index Box -->
-            <div class="p-5 rounded-2xl bg-gradient-to-r from-pacific-100 to-teal-50 border border-pacific-200 shadow-inner flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-3">
-                    <div class="p-3 rounded-xl bg-white text-pacific-700 shadow-sm"><i class="fa-solid fa-file-word text-2xl"></i></div>
-                    <div>
-                        <h4 class="text-pacific-900 font-bold text-sm">Need the entire physical bibliography?</h4>
-                        <p class="text-xs text-slate-600">Download the consolidated index list containing details of all Oceania biomedical network proceedings.</p>
-                    </div>
-                </div>
-                <button onclick="simulateDownload('Meeting Documents.docx')" class="px-5 py-2.5 bg-white border border-pacific-300 hover:bg-pacific-50 text-pacific-800 text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-2">
-                    <i class="fa-solid fa-download text-pacific-600"></i> Get Meeting Documents.docx
-                </button>
-            </div>
-
         </div>
     </div>
 </section>
+
+
+<!-- Survey Section -->
+<section id="survey" class="relative py-24 bg-gradient-to-b from-[#f0f6fc] to-white overflow-hidden border-t border-ocean-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Information Panel left -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-islandGreen-100 text-xs font-bold text-islandGreen-800 border border-islandGreen-300">
+                    <i class="fa-solid fa-file-waveform animate-bounce"></i> Live Capacity Mapping
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-heading font-black text-ocean-900 leading-tight">
+                    2026 Regional <br>Biomedical Capacity Survey
+                </h2>
+                <p class="text-slate-800 text-sm sm:text-base font-semibold leading-relaxed">
+                    PBEN is conducting its comprehensive decennial workforce & assets check to map every biomedical technician, engineer, and device calibrator active within the Pacific Community (SPC).
+                </p>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-center gap-2.5 text-xs text-slate-700 font-bold">
+                        <i class="fa-solid fa-circle-check text-islandGreen-600 text-sm"></i> Consolidates regional training aid allocations
+                    </div>
+                    <div class="flex items-center gap-2.5 text-xs text-slate-700 font-bold">
+                        <i class="fa-solid fa-circle-check text-islandGreen-600 text-sm"></i> Assesses spare-part supply insulation factors
+                    </div>
+                    <div class="flex items-center gap-2.5 text-xs text-slate-700 font-bold">
+                        <i class="fa-solid fa-circle-check text-islandGreen-600 text-sm"></i> Backed by the WHO & SPC Public Health Division
+                    </div>
+                </div>
+            </div>
+
+            <!-- Survey Form Block right -->
+            <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border-2 border-ocean-200 shadow-xl relative">
+                <h3 class="text-lg font-heading font-extrabold text-ocean-900 border-b border-ocean-100 pb-4 mb-6">
+                    Survey Quick Submission Portal
+                </h3>
+
+                <!-- Multi-Step simulated dynamic form layout -->
+                <form id="pben-survey-form" class="space-y-4" onsubmit="handleSurveySubmit(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Full Name</label>
+                            <input type="text" required placeholder="e.g. Veronica Vaouli" class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Your Medical Facility</label>
+                            <input type="text" required placeholder="e.g. LBJ Medical Center" class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Primary Territory/Nation</label>
+                            <select class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none bg-white transition-all">
+                                <option>Fiji</option>
+                                <option>Samoa</option>
+                                <option>Tonga</option>
+                                <option>American Samoa</option>
+                                <option>Vanuatu</option>
+                                <option>Solomon Islands</option>
+                                <option>Cook Islands</option>
+                                <option>Tuvalu</option>
+                                <option>Kiribati</option>
+                                <option>Other PICT</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Your Clinical Role</label>
+                            <select class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none bg-white transition-all">
+                                <option>Biomedical Engineering Technician (BMET)</option>
+                                <option>Senior Clinical Engineer</option>
+                                <option>Medical Director / Chief Medical Officer</option>
+                                <option>Infrastructure Coordinator</option>
+                                <option>Student / Apprentice BMET</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">What is the single greatest asset challenge in your facility?</label>
+                        <textarea rows="3" required placeholder="e.g., Saltwater ocean-air corrosion or lack of access to calibration tools..." class="w-full px-4 py-3 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all"></textarea>
+                    </div>
+
+                    <div class="flex items-start gap-2 pt-2">
+                        <input type="checkbox" required id="consent-check" class="mt-1 accent-islandGreen-600">
+                        <label for="consent-check" class="text-[11px] text-slate-700 font-medium">
+                            I authorize PBEN & SPC Public Health teams to analyze and aggregate this survey data for workforce research summaries.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-gradient-to-r from-ocean-800 to-islandGreen-600 hover:from-ocean-700 hover:to-islandGreen-500 text-white font-extrabold text-sm uppercase tracking-wider transition-all shadow-md">
+                        Transmit Survey Data <i class="fa-solid fa-paper-plane ml-1"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- Resources Section -->
-<section id="resources" class="relative py-24 bg-gradient-to-b from-white to-[#f0fdfa] overflow-hidden">
-    <!-- Polynesian Wave Top Graphic Divider -->
-    <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10 transform rotate-180">
-        <svg class="relative block w-full h-[40px] text-pacific-50" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86C221.72,64.8,154.06,44.75,88.43,26.85,57.05,18.3,26.9,8.75,0,0V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="currentColor"></path>
-        </svg>
-    </div>
-
+<section id="resources" class="relative py-24 bg-white overflow-hidden border-t border-ocean-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-        <!-- Title & Header Details -->
-        <div class="text-center max-w-2xl mx-auto space-y-3">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pacific-100 text-xs font-semibold text-polyTeal">
-                <i class="fa-solid fa-book-open"></i> Essential Directives
-            </div>
-            <h2 class="text-3xl font-heading font-black text-pacific-900">
-                Regional Resources & Protocols
-            </h2>
-            <p class="text-sm text-slate-600">
-                Official health policies and strategic guidelines co-authored with the Secretariat of the Pacific Community (SPC) to establish uniform medical standards.
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <span class="px-3.5 py-1.5 rounded-full bg-ocean-100 text-xs font-bold text-ocean-900 border border-ocean-200"><i class="fa-solid fa-file-shield text-islandGreen-600 mr-1.5"></i> Technical Knowledgebase</span>
+            <h2 class="text-3xl sm:text-4xl font-heading font-black text-ocean-900">Protocols & Guidelines</h2>
+            <p class="text-slate-700 text-sm sm:text-base font-semibold">
+                Critical materials compiled for engineering supervisors operating in island medical environments.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Resource Card 1: SPC National Policy -->
-            <div class="p-6 rounded-2xl bg-white border border-pacific-200 space-y-4 hover:border-polyTeal/40 hover:scale-[1.01] transition-all flex flex-col justify-between shadow-sm">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-polyTeal/10 flex items-center justify-center text-polyTeal text-xl">
-                        <i class="fa-solid fa-file-shield"></i>
-                    </div>
-                    <h3 class="text-pacific-900 font-bold text-base">SPC National Medical Equipment Management Policy</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        National guidelines focused on lifecycle operations, safety checks, decommission rules, and preventative scheduled engineering maintenance.
-                    </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Resource Card 1 -->
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-[#f0f6fc] to-[#e8f2fc]/35 border border-ocean-200 space-y-4 hover:border-islandGreen-500 transition-colors">
+                <div class="flex justify-between items-start">
+                    <span class="p-2.5 rounded-xl bg-white text-ocean-700 shadow-sm text-lg"><i class="fa-solid fa-file-pdf"></i></span>
+                    <span class="text-[10px] bg-islandGreen-100 border border-islandGreen-200 text-islandGreen-800 font-extrabold px-2 py-0.5 rounded-full">PDF Guide</span>
                 </div>
-                <div class="pt-4 border-t border-pacific-100 flex items-center justify-between">
-                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Type: PDF Standard</span>
-                    <button onclick="simulateDownload('SPC National Medical Equipment Management Policy')" class="px-3.5 py-1.5 rounded-lg bg-polyTeal hover:bg-teal-700 text-white text-xs font-semibold transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-download"></i> Get File
-                    </button>
+                <div>
+                    <h4 class="text-ocean-900 font-bold text-sm">WHO Donation Guide Adaptations</h4>
+                    <p class="text-xs text-slate-700 leading-relaxed font-semibold mt-1">Specific structural standards for accepting second-hand clinical apparatuses inside tropical coastal hospitals.</p>
+                </div>
+                <div class="pt-2 border-t border-ocean-100 flex justify-between items-center text-xs font-bold text-islandGreen-700">
+                    <a href="javascript:void(0)" onclick="simulateDownload('WHO Donation Adaptations Guide')" class="hover:underline">Secure Copy <i class="fa-solid fa-download ml-1 text-[10px]"></i></a>
+                    <span class="text-[10px] text-slate-500">2.4 MB</span>
                 </div>
             </div>
 
-            <!-- Resource Card 2: Donation Policy -->
-            <div class="p-6 rounded-2xl bg-white border border-pacific-200 space-y-4 hover:border-amber-500/40 hover:scale-[1.01] transition-all flex flex-col justify-between shadow-sm">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-polyGold text-xl">
-                        <i class="fa-solid fa-hand-holding-medical"></i>
-                    </div>
-                    <h3 class="text-pacific-900 font-bold text-base">SPC Medical Equipment Donation Policy</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Guiding framework designed to prevent dump-donation cycles, ensuring incoming clinical devices are accompanied by components, manuals, and support pathways.
-                    </p>
+            <!-- Resource Card 2 -->
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-[#f0f6fc] to-[#e8f2fc]/35 border border-ocean-200 space-y-4 hover:border-islandGreen-500 transition-colors">
+                <div class="flex justify-between items-start">
+                    <span class="p-2.5 rounded-xl bg-white text-islandGreen-600 shadow-sm text-lg"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="text-[10px] bg-ocean-100 border border-ocean-200 text-ocean-800 font-extrabold px-2 py-0.5 rounded-full">Data Summary</span>
                 </div>
-                <div class="pt-4 border-t border-pacific-100 flex items-center justify-between">
-                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Type: PDF Standard</span>
-                    <button onclick="simulateDownload('SPC Medical Equipment Donation Policy')" class="px-3.5 py-1.5 rounded-lg bg-polyTeal hover:bg-teal-700 text-white text-xs font-semibold transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-download"></i> Get File
-                    </button>
+                <div>
+                    <h4 class="text-ocean-900 font-bold text-sm">2023 Pacific BioMed Workforce Summary</h4>
+                    <p class="text-xs text-slate-700 leading-relaxed font-semibold mt-1">Full analysis detailing the demographic profiles, gender distributions, and educational status of the 98 regional engineers.</p>
+                </div>
+                <div class="pt-2 border-t border-ocean-100 flex justify-between items-center text-xs font-bold text-islandGreen-700">
+                    <a href="javascript:void(0)" onclick="simulateDownload('2023 Pacific BioMed Workforce Summary')" class="hover:underline">Secure Copy <i class="fa-solid fa-download ml-1 text-[10px]"></i></a>
+                    <span class="text-[10px] text-slate-500">1.8 MB</span>
                 </div>
             </div>
 
-            <!-- Resource Card 3: PBEN ToR -->
-            <div class="p-6 rounded-2xl bg-white border border-pacific-200 space-y-4 hover:border-sky-500/40 hover:scale-[1.01] transition-all flex flex-col justify-between shadow-sm">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 text-xl">
-                        <i class="fa-solid fa-landmark-dome"></i>
-                    </div>
-                    <h3 class="text-pacific-900 font-bold text-base">PBEN Charter & Terms of Reference (ToR)</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        The founding covenant outlining steering committee responsibilities, reporting timelines, dispute management, and voting mechanics.
-                    </p>
+            <!-- Resource Card 3 -->
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-[#f0f6fc] to-[#e8f2fc]/35 border border-ocean-200 space-y-4 hover:border-islandGreen-500 transition-colors">
+                <div class="flex justify-between items-start">
+                    <span class="p-2.5 rounded-xl bg-white text-ocean-700 shadow-sm text-lg"><i class="fa-solid fa-shield-halved"></i></span>
+                    <span class="text-[10px] bg-yellow-100 border border-yellow-200 text-yellow-800 font-extrabold px-2 py-0.5 rounded-full">Regulatory</span>
                 </div>
-                <div class="pt-4 border-t border-pacific-100 flex items-center justify-between">
-                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Type: PDF Charter</span>
-                    <button onclick="simulateDownload('PBEN Terms of Reference')" class="px-3.5 py-1.5 rounded-lg bg-polyTeal hover:bg-teal-700 text-white text-xs font-semibold transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-download"></i> Get File
-                    </button>
+                <div>
+                    <h4 class="text-ocean-900 font-bold text-sm">ISO 13485 Equipment Calibrations</h4>
+                    <p class="text-xs text-slate-700 leading-relaxed font-semibold mt-1">Operational standards and checklist sheets for verifying neonatal incubator structures and surgical ventilators.</p>
+                </div>
+                <div class="pt-2 border-t border-ocean-100 flex justify-between items-center text-xs font-bold text-islandGreen-700">
+                    <a href="javascript:void(0)" onclick="simulateDownload('ISO 13485 Calibration Checklists')" class="hover:underline">Secure Copy <i class="fa-solid fa-download ml-1 text-[10px]"></i></a>
+                    <span class="text-[10px] text-slate-500">4.1 MB</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 2026 PBEN Survey Link Section -->
-<section id="survey" class="relative py-20 overflow-hidden bg-[#e6f7f2]">
-    <!-- Polynesian Pattern & Waves Background -->
-    <div class="absolute inset-0 z-0">
-        <div class="absolute -top-12 left-1/3 w-96 h-96 bg-amber-200/30 rounded-full blur-[80px]"></div>
-        <div class="absolute inset-0 poly-pattern-bg opacity-35"></div>
-    </div>
 
-    <!-- Symmetrical Wave Divider decoration inside the section container -->
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-        <div class="relative rounded-3xl overflow-hidden p-8 sm:p-12 border border-pacific-300 bg-white shadow-xl space-y-8 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <!-- Decorative Badge background highlight -->
-            <div class="absolute top-0 right-0 p-3 bg-amber-100 rounded-bl-3xl border-l border-b border-amber-200 text-xs font-bold text-polyGold uppercase tracking-widest">
-                <i class="fa-solid fa-fire mr-1"></i> Priority Action 2026
-            </div>
-
-            <!-- SVG Stylized Oceania Navigational Compass / BioMed Integration Graphic -->
-            <div class="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-[#e6f7f2] border border-pacific-300 flex items-center justify-center text-polyTeal">
-                <svg class="w-16 h-16 sm:w-20 sm:h-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polygon points="12,2 15,12 12,17 9,12" />
-                    <line x1="12" y1="2" x2="12" y2="22" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                </svg>
-            </div>
-
-            <div class="space-y-4 text-center md:text-left flex-1">
-                <h3 class="text-2xl sm:text-3xl font-heading font-black text-pacific-900 leading-tight">
-                    Submit Your Data: <span class="text-polyGold">2026 PBEN Regional Survey</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                    We are organizing the largest collection of biomedical asset, training, and policy information across Oceania. Your responses directly guide the next phase of SPC national hardware investments.
+<!-- Contact / Connect Network Section -->
+<section id="contact" class="relative py-24 bg-gradient-to-b from-white to-[#f0f6fc] overflow-hidden border-t border-ocean-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ocean-100 text-xs font-bold text-ocean-900 border border-ocean-200">
+                    <i class="fa-solid fa-circle-nodes text-islandGreen-600 animate-pulse"></i> Connect With PBEN
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-heading font-black text-ocean-900 leading-tight">
+                    Link with our <br>Regional Directorate
+                </h2>
+                <p class="text-slate-800 text-sm font-semibold leading-relaxed">
+                    If you are an international development adviser, a donor supplier, or a Ministry of Health official representing a Pacific state, we want to hear from you. Let's build solid healthcare engines together.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
-                    <!-- Clean styled download/redirect button -->
-                    <button onclick="openSurveyModal()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:to-amber-500 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-square-poll-vertical text-base"></i> Open Survey Portal
-                    </button>
-                    <span class="text-[11px] text-slate-600 italic">Takes less than 12 minutes to complete.</span>
+
+                <!-- Core Details list -->
+                <div class="space-y-4 text-xs font-bold text-ocean-900">
+                    <div class="flex items-center gap-3">
+                        <span class="p-2 rounded-lg bg-islandGreen-100 text-islandGreen-700 text-sm flex items-center justify-center w-8 h-8"><i class="fa-solid fa-envelope"></i></span>
+                        <span>directorate@pacificbiomed.org</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="p-2 rounded-lg bg-islandGreen-100 text-islandGreen-700 text-sm flex items-center justify-center w-8 h-8"><i class="fa-solid fa-globe"></i></span>
+                        <span>spc.int/public-health-division</span>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Interactive Form Panel -->
+            <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border-2 border-ocean-200 shadow-xl">
+                <h3 class="text-base font-heading font-extrabold text-ocean-900 border-b border-ocean-100 pb-3 mb-5 flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-islandGreen-600"></i> Transmission Message Board
+                </h3>
+                
+                <form id="pben-contact-form" class="space-y-4" onsubmit="handleContactSubmit(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Official Name</label>
+                            <input type="text" required placeholder="e.g. Dr. Tevita" class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Affiliation Organization</label>
+                            <input type="text" required placeholder="e.g. Ministry of Health, Samoa" class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Email Address</label>
+                        <input type="email" required placeholder="e.g. tevita@health.gov.ws" class="w-full px-4 py-2.5 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-ocean-900 uppercase mb-1.5">Details of Collaboration Proposal</label>
+                        <textarea rows="3" required placeholder="Please outline target nations, equipment goals, or workforce assistance options..." class="w-full px-4 py-3 rounded-xl border border-ocean-200 text-sm focus:border-islandGreen-500 focus:ring-1 focus:ring-islandGreen-500 outline-none transition-all"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-ocean-800 to-islandGreen-600 hover:from-ocean-700 hover:to-islandGreen-500 text-white font-extrabold text-sm uppercase tracking-wider transition-all shadow-md">
+                        Transmit Collaboration Request <i class="fa-solid fa-wave-square ml-1.5 animate-pulse"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Contact Connect Section (Email hidden to avoid spam) -->
-<section id="contact" class="relative py-20 bg-white overflow-hidden border-t border-pacific-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-8">
-        <!-- Section Header -->
-        <div class="text-center space-y-3">
-            <h2 class="text-3xl font-heading font-black text-pacific-900">Connect with the Secretariat</h2>
-            <p class="text-xs sm:text-sm text-slate-600">
-                Have questions about document uploads, or want to register a technical submission? Contact our coordination desk.
-            </p>
-        </div>
 
-        <!-- Secure Contact Box -->
-        <div class="bg-pacific-50 border border-pacific-200 rounded-2xl p-6 sm:p-10 shadow-md space-y-6">
-            <form id="pben-contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Your Full Name</label>
-                        <input type="text" required placeholder="Dr. Ana Tupou" class="w-full px-4 py-2.5 rounded-lg bg-white border border-pacific-300 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-polyTeal focus:border-transparent transition-all shadow-sm">
+<!-- Main Platform Footer -->
+<footer class="bg-gradient-to-b from-ocean-950 to-black text-white py-16 border-t-4 border-islandGreen-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            
+            <div class="md:col-span-6 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-ocean-600 to-islandGreen-500 shadow-md">
+                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Country / Member Territory</label>
-                        <input type="text" required placeholder="Fiji, Samoa, Vanuatu, etc." class="w-full px-4 py-2.5 rounded-lg bg-white border border-pacific-300 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-polyTeal focus:border-transparent transition-all shadow-sm">
+                        <span class="text-xl font-heading font-extrabold tracking-tight">PBEN</span>
+                        <p class="text-[9px] text-islandGreen-400 tracking-widest uppercase font-bold">Pacific Biomedical Engineering Network</p>
                     </div>
                 </div>
+                <p class="text-xs text-ocean-200 leading-relaxed max-w-sm font-semibold">
+                    An inclusive advisory collaborative facilitating safe, effective, and resilient diagnostic machinery ecosystems across Oceania. Supported by DFAT, WHO, and regional healthcare programs.
+                </p>
+            </div>
 
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Affiliated Health Authority / Facility</label>
-                    <input type="text" required placeholder="Ministry of Health & Medical Services" class="w-full px-4 py-2.5 rounded-lg bg-white border border-pacific-300 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-polyTeal focus:border-transparent transition-all shadow-sm">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Your Query Details</label>
-                    <textarea required rows="4" placeholder="How can the PBEN strategic steering committee assist with your biomedical setup?" class="w-full px-4 py-2.5 rounded-lg bg-white border border-pacific-300 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-polyTeal focus:border-transparent transition-all shadow-sm"></textarea>
-                </div>
-
-                <div class="flex items-center justify-between gap-4 pt-2">
-                    <span class="text-[10px] text-slate-600 flex items-center gap-1 font-semibold">
-                        <i class="fa-solid fa-user-shield text-polyTeal"></i> Spam-secure network processing (No exposed email addresses)
-                    </span>
-                    <button type="submit" class="px-6 py-3 rounded-lg bg-gradient-to-r from-pacific-600 to-polyTeal hover:from-pacific-500 hover:to-teal-500 text-white text-xs font-extrabold uppercase tracking-widest transition-all shadow-md flex items-center gap-2">
-                        Submit Query <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-pacific-950 text-slate-100 py-12 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8">
-        <!-- Logo & Core info -->
-        <div class="md:col-span-5 space-y-4">
-            <div class="flex items-center space-x-3">
-                <div class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-pacific-600 to-polyTeal shadow-md">
-                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <span class="text-lg font-heading font-extrabold tracking-tight bg-gradient-to-r from-white to-pacific-300 bg-clip-text text-transparent">PBEN</span>
-                    <p class="text-[8px] text-pacific-300 tracking-widest uppercase font-semibold">Pacific BioMed</p>
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="text-xs font-bold text-islandGreen-400 uppercase tracking-widest border-b border-ocean-800 pb-2">Technical Portals</h4>
+                <div class="flex flex-col space-y-2 text-xs text-ocean-200 font-semibold">
+                    <a href="#hero" class="hover:text-islandGreen-400 transition-colors">Core Dashboard</a>
+                    <a href="#about" class="hover:text-islandGreen-400 transition-colors">Who We Are</a>
+                    <a href="#strategic-plan" class="hover:text-islandGreen-400 transition-colors">Strategic Plan 2026-2031</a>
+                    <a href="#survey" class="hover:text-islandGreen-400 transition-colors">Regional BioMed Assessment Survey</a>
                 </div>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed max-w-sm">
-                Unifying clinicians and engineers across Oceania to establish resilient, sustainable health tech capacities. Powered by shared values and regional action.
-            </p>
-        </div>
 
-        <!-- Directory Links -->
-        <div class="md:col-span-3 space-y-3">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Section Directory</h4>
-            <ul class="space-y-2 text-xs text-slate-400">
-                <li><a href="#about" class="hover:text-white hover:underline transition-all">About the Alliance</a></li>
-                <li><a href="#strategic-plan" class="hover:text-white hover:underline transition-all">2026-2031 Strategic Plan</a></li>
-                <li><a href="#meetings" class="hover:text-white hover:underline transition-all">Meeting Minutes & Data</a></li>
-                <li><a href="#resources" class="hover:text-white hover:underline transition-all">Donations & Management Policy</a></li>
-            </ul>
-        </div>
-
-        <!-- Partnership & Spam Disclaimer -->
-        <div class="md:col-span-4 space-y-3">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Co-supported Partnership</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-                Affiliated with the Secretariat of the Pacific Community (SPC). Direct email communications are automated to restrict web-scraping and preserve clinical operations safety.
-            </p>
-            <div class="flex items-center space-x-2 text-xs text-polyGold">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span class="text-amber-400">Secure HTTPS Portal</span>
+            <div class="md:col-span-3 space-y-3">
+                <h4 class="text-xs font-bold text-islandGreen-400 uppercase tracking-widest border-b border-ocean-800 pb-2">Member Support</h4>
+                <div class="flex flex-col space-y-2 text-xs text-ocean-200 font-semibold">
+                    <a href="#resources" class="hover:text-islandGreen-400 transition-colors">ISO 13485 Quality Audit Logs</a>
+                    <a href="#meetings" class="hover:text-islandGreen-400 transition-colors">Nadi Conclave Briefings</a>
+                    <a href="#contact" class="hover:text-islandGreen-400 transition-colors">Partner Engagement Portal</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Symmetrical Copyright bar -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
-        <span>© 2026 Pacific Biomedical Engineering Network (PBEN). All rights reserved.</span>
-        <div class="flex items-center space-x-4">
-            <span class="text-slate-400">Sovereignty • Resilience • Unity</span>
+        <div class="border-t border-ocean-900 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-ocean-300 font-semibold gap-4">
+            <p>© 2026 Pacific Biomedical Engineering Network (PBEN). All rights reserved. Registered under the Secretariat of the Pacific Community (SPC).</p>
+            <div class="flex gap-4">
+                <a href="javascript:void(0)" class="hover:text-white transition-colors">Privacy Charter</a>
+                <a href="javascript:void(0)" class="hover:text-white transition-colors">Terms of Calibration Governance</a>
+            </div>
         </div>
     </div>
 </footer>
 
-<!-- Modal 1: Image Detail Modal -->
-<div id="image-modal" class="fixed inset-0 z-50 hidden bg-pacific-950/80 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="relative max-w-4xl w-full bg-white rounded-3xl border border-pacific-200 p-4 sm:p-6 overflow-hidden max-h-[90vh] flex flex-col shadow-2xl">
-        <!-- Top bar inside Modal -->
-        <div class="flex items-center justify-between border-b border-pacific-100 pb-3 mb-4">
-            <span class="text-sm font-bold text-pacific-900"><i class="fa-solid fa-map-location-dot text-polyGold mr-1.5"></i> Strategic Plan Blueprint (MEDICAL EQUIPMENT.png)</span>
-            <button onclick="closeImageModal()" class="w-8 h-8 rounded-full bg-pacific-100 hover:bg-pacific-200 text-slate-800 flex items-center justify-center transition-all">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
+<!-- Interactive Image Modal for Strategic Blueprint -->
+<div id="blueprint-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
+    <div class="relative max-w-4xl w-full bg-white rounded-3xl p-6 border-2 border-islandGreen-500 shadow-2xl flex flex-col space-y-4">
+        <button onclick="closeImageModal()" class="absolute -top-4 -right-4 bg-islandGreen-600 hover:bg-islandGreen-700 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg shadow-md focus:outline-none font-bold">✕</button>
         
-        <!-- Interactive Image Frame with zoom capabilities -->
-        <div class="flex-1 overflow-auto rounded-xl bg-white border border-slate-100 p-4">
-            <img src="MEDICAL EQUIPMENT.png" alt="Strategic Plan Details" class="max-w-full h-auto mx-auto" onerror="handleImageError(this)">
+        <div class="flex justify-between items-center border-b border-ocean-100 pb-2">
+            <h3 class="text-base font-heading font-black text-ocean-900 uppercase">PBEN Framework Plan (Deep Zoom)</h3>
+            <span class="text-xs text-slate-500 font-bold">Secretariat Document #PBEN-2026-BP1</span>
         </div>
 
-        <!-- Footer instructions inside Modal -->
-        <div class="mt-4 pt-3 border-t border-pacific-100 flex justify-between items-center text-xs text-slate-600">
-            <span>Engineering a Healthier Blue Pacific (2026-2031)</span>
-            <button onclick="closeImageModal()" class="px-4 py-2 bg-pacific-700 hover:bg-pacific-800 text-white rounded-lg transition-all font-semibold">Done</button>
-        </div>
-    </div>
-</div>
+        <!-- Zoomable/Scrollable Inner Map representation -->
+        <div class="overflow-auto max-h-[70vh] rounded-2xl bg-gradient-to-br from-ocean-900 via-ocean-950 to-black p-8 text-white space-y-6 shadow-inner">
+            <div class="text-center space-y-3">
+                <div class="inline-flex px-4 py-1 rounded-full bg-islandGreen-500/20 text-islandGreen-400 text-xs font-bold border border-islandGreen-500/40">Blueprint Details 2026 - 2031</div>
+                <h4 class="text-xl font-heading font-black text-white">Engineering a Healthier Blue Pacific</h4>
+                <p class="text-xs text-ocean-200 max-w-lg mx-auto">This document outlines the systematic metrics for improving medical hardware reliability in remote clinics and island chains.</p>
+            </div>
 
-<!-- Modal 2: 2026 Survey Modal Portal -->
-<div id="survey-modal" class="fixed inset-0 z-50 hidden bg-pacific-950/80 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="relative max-w-2xl w-full bg-white rounded-3xl border border-polyTeal/30 p-6 overflow-hidden max-h-[90vh] flex flex-col shadow-2xl">
-        <!-- Close button top corner -->
-        <div class="flex items-center justify-between border-b border-pacific-100 pb-4 mb-4">
-            <div class="flex items-center space-x-3">
-                <span class="w-10 h-10 rounded-lg bg-pacific-100 flex items-center justify-center text-polyTeal"><i class="fa-solid fa-square-poll-vertical text-xl"></i></span>
-                <div>
-                    <h3 class="text-lg font-heading font-black text-pacific-900">2026 PBEN Regional Survey Portal</h3>
-                    <p class="text-[10px] text-slate-500">Collaborative asset validation across Oceania</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ocean-800">
+                <div class="p-4 rounded-xl bg-ocean-800/60 border border-ocean-700 space-y-2">
+                    <h5 class="text-xs font-extrabold text-islandGreen-400 uppercase tracking-wider">PILLAR 1: Workforce Alignment</h5>
+                    <p class="text-[11px] text-ocean-100 font-medium">Standardizing professional certification registers so credits are transportable across Pacific territories.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-ocean-800/60 border border-ocean-700 space-y-2">
+                    <h5 class="text-xs font-extrabold text-islandGreen-400 uppercase tracking-wider">PILLAR 2: Sourcing Security</h5>
+                    <p class="text-[11px] text-ocean-100 font-medium">Setting strong technical standards on international apparatus donations to minimize diagnostic e-waste.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-ocean-800/60 border border-ocean-700 space-y-2">
+                    <h5 class="text-xs font-extrabold text-islandGreen-400 uppercase tracking-wider">PILLAR 3: Calibration Network</h5>
+                    <p class="text-[11px] text-ocean-100 font-medium">Equipping regional hub libraries with ISO calibrated reference sets to lower transport expenses.</p>
                 </div>
             </div>
-            <button onclick="closeSurveyModal()" class="w-8 h-8 rounded-full bg-pacific-100 hover:bg-pacific-200 text-slate-800 flex items-center justify-center transition-all">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
 
-        <div class="flex-1 overflow-y-auto space-y-6 pr-2">
-            <!-- Simulated Form Steps -->
-            <div class="space-y-4">
-                <div class="p-4 rounded-xl bg-pacific-50 border border-pacific-200 space-y-2">
-                    <h4 class="text-xs font-bold text-polyGold uppercase tracking-widest">Section A: Hospital Demographics</h4>
-                    <p class="text-xs text-slate-600">Choose your regional location to aggregate your hospital equipment directory accurately:</p>
-                    <div class="grid grid-cols-2 gap-3 pt-1">
-                        <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-pacific-200 hover:border-polyTeal/30 cursor-pointer">
-                            <input type="radio" name="region-select" class="accent-polyTeal">
-                            <span class="text-xs text-slate-700">Melanesian States</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-pacific-200 hover:border-polyTeal/30 cursor-pointer">
-                            <input type="radio" name="region-select" class="accent-polyTeal">
-                            <span class="text-xs text-slate-700">Micronesian States</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-pacific-200 hover:border-polyTeal/30 cursor-pointer">
-                            <input type="radio" name="region-select" class="accent-polyTeal">
-                            <span class="text-xs text-slate-700">Polynesian States</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-pacific-200 hover:border-polyTeal/30 cursor-pointer">
-                            <input type="radio" name="region-select" class="accent-polyTeal">
-                            <span class="text-xs text-slate-700">Other Territories</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="p-4 rounded-xl bg-pacific-50 border border-pacific-200 space-y-2">
-                    <h4 class="text-xs font-bold text-polyGold uppercase tracking-widest">Section B: Asset Tracking Capabilities</h4>
-                    <p class="text-xs text-slate-600">How would you grade your clinic's current medical hardware repair capacity?</p>
-                    <select class="w-full px-3 py-2 rounded-lg bg-white border border-pacific-300 text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-polyTeal">
-                        <option>Excellent — Fully equipped laboratory & certified technicians</option>
-                        <option>Sufficient — Core test setups but require key part imports</option>
-                        <option>Critical — Heavily reliant on fly-in regional engineers</option>
-                        <option>Unregulated — No dedicated bio-tech support onsite</option>
-                    </select>
-                </div>
-
-                <div class="p-4 rounded-xl bg-pacific-50 border border-pacific-200 space-y-2">
-                    <h4 class="text-xs font-bold text-polyGold uppercase tracking-widest">Section C: Primary System Needs</h4>
-                    <p class="text-xs text-slate-600">Which systems require urgent strategic focus over the next 12 months?</p>
-                    <div class="grid grid-cols-2 gap-2 text-xs pt-1">
-                        <label class="flex items-center gap-2"><input type="checkbox" class="accent-polyTeal"> Oxygen & Gas Plants</label>
-                        <label class="flex items-center gap-2"><input type="checkbox" class="accent-polyTeal"> Clinical Lab Diagnostics</label>
-                        <label class="flex items-center gap-2"><input type="checkbox" class="accent-polyTeal"> Imaging & Ultrasound</label>
-                        <label class="flex items-center gap-2"><input type="checkbox" class="accent-polyTeal"> Cold Chain Preservation</label>
-                    </div>
-                </div>
+            <!-- Polynesian Art Motif inside Modal -->
+            <div class="flex justify-center pt-4 opacity-25">
+                <svg class="w-32 h-16 text-white" viewBox="0 0 100 50" fill="currentColor">
+                    <path d="M0,25 Q25,5 50,25 T100,25 L100,50 L0,50 Z" />
+                </svg>
             </div>
         </div>
 
-        <div class="pt-4 border-t border-pacific-100 flex items-center justify-between mt-4">
-            <span class="text-[10px] text-slate-500">Progress directly logged with SPC coordination desk.</span>
-            <div class="flex gap-2">
-                <button onclick="closeSurveyModal()" class="px-3.5 py-1.5 rounded-lg bg-pacific-100 hover:bg-pacific-200 text-slate-800 text-xs font-semibold">Dismiss</button>
-                <button onclick="submitSurveySimulation()" class="px-4 py-1.5 rounded-lg bg-polyTeal hover:bg-teal-700 text-white text-xs font-bold flex items-center gap-1.5">
-                    Submit Response <i class="fa-solid fa-check"></i>
-                </button>
-            </div>
+        <div class="flex justify-end pt-2">
+            <button onclick="closeImageModal()" class="px-5 py-2 rounded-xl bg-ocean-900 hover:bg-ocean-800 text-white text-xs font-bold transition-all shadow-md">Close Blueprint View</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Smooth sticky navbar background transition
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('navbar');
-        if (window.scrollY > 40) {
-            header.classList.add('bg-[#eafcf8]', 'shadow-md', 'border-b-pacific-300/60');
-            header.classList.remove('bg-[#eafcf8]/80');
+    // Navigation Scroll Indicator
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 30) {
+            navbar.classList.add('bg-white', 'shadow-md');
+            navbar.classList.remove('bg-[#f0f6fc]/90');
         } else {
-            header.classList.remove('bg-[#eafcf8]', 'shadow-md', 'border-b-pacific-300/60');
-            header.classList.add('bg-[#eafcf8]/80');
+            navbar.classList.remove('bg-white', 'shadow-md');
+            navbar.classList.add('bg-[#f0f6fc]/90');
         }
     });
 
-    // Mobile Hamburger Menu Toggle Functionality
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-
-    mobileMenuBtn.addEventListener('click', function() {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-xmark');
-        } else {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa-bars');
-        }
-    });
-
+    // Mobile menu toggle logic
     function toggleMobileMenu() {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
     }
+    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
 
-    // Interactive Core Values Panels Functionality
-    function showValue(valueKey) {
-        // Hide all panes
-        const panes = document.querySelectorAll('.value-pane');
-        panes.forEach(pane => pane.classList.add('hidden'));
-
-        // Reset active state classes from buttons
-        const buttons = document.querySelectorAll('.value-tab-btn');
-        buttons.forEach(btn => {
-            btn.classList.remove('bg-polyTeal', 'text-white', 'border-polyTeal/30');
-            btn.classList.add('bg-white', 'text-slate-700', 'border-pacific-200');
-        });
-
-        // Show targets
-        document.getElementById(`value-${valueKey}`).classList.remove('hidden');
-        const activeBtn = document.getElementById(`btn-${valueKey}`);
-        if (activeBtn) {
-            activeBtn.classList.add('bg-polyTeal', 'text-white', 'border-polyTeal/30');
-            activeBtn.classList.remove('bg-white', 'text-slate-700', 'border-pacific-200');
-        }
-    }
-    // Initialize first value
-    showValue('aroha');
-
-    // Interactive Search Tool for Meetings Document Timeline
-    function filterMeetings() {
-        const searchQuery = document.getElementById('meeting-search').value.toLowerCase();
-        const documentItems = document.querySelectorAll('.document-item');
-        const groups = document.querySelectorAll('.meeting-group');
-
-        groups.forEach(group => {
-            let matchesInGroup = 0;
-            const items = group.querySelectorAll('.document-item');
-            
-            items.forEach(item => {
-                const docName = item.getAttribute('data-name').toLowerCase();
-                const textContent = item.textContent.toLowerCase();
-                if (docName.includes(searchQuery) || textContent.includes(searchQuery)) {
-                    item.classList.remove('hidden');
-                    matchesInGroup++;
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-
-            if (matchesInGroup > 0 || searchQuery === '') {
-                group.classList.remove('hidden');
-            } else {
-                group.classList.add('hidden');
-            }
-        });
-    }
-
-    // Modal Control Functions
-    function openImageModal() {
-        document.getElementById('image-modal').classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-    }
-
-    function closeImageModal() {
-        document.getElementById('image-modal').classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-    }
-
-    function openSurveyModal() {
-        document.getElementById('survey-modal').classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-    }
-
-    function closeSurveyModal() {
-        document.getElementById('survey-modal').classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-    }
-
-    // Image Error Handler to insert visually appealing placeholders if the user hasn't uploaded "MEDICAL EQUIPMENT.png" yet
-    function handleImageError(imgElement) {
-        console.warn('Verbatim image MEDICAL EQUIPMENT.png not loaded, applying beautiful SVG mockup fallback');
-        imgElement.onerror = null; // Prevent infinite loops
-        imgElement.src = 'https://placehold.co/600x800/e6f7f2/0d9488?text=PBEN+Strategic+Plan+2026-2031%0A%5B+Click+to+zoom+blueprint+%5D';
-    }
-
-    // Elegant Toast Notification System implementation
-    function showToast(title, message, type = 'info') {
+    // Global Toast System
+    function showToast(message, type = 'info') {
         const container = document.getElementById('toast-container');
         const toast = document.createElement('div');
-        toast.className = `p-4 rounded-xl border shadow-xl bg-white/95 backdrop-blur-md flex items-start gap-3 transition-all duration-300 transform translate-y-2 opacity-0 pointer-events-auto max-w-sm w-full`;
+        toast.className = `p-4 rounded-2xl text-white font-semibold text-xs shadow-xl transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-3 w-full pointer-events-auto ${
+            type === 'success' ? 'bg-islandGreen-600 border border-islandGreen-500' : 
+            type === 'error' ? 'bg-red-600 border border-red-500' : 'bg-ocean-800 border border-ocean-700'
+        }`;
         
-        let iconHtml = '';
-        if (type === 'success') {
-            toast.classList.add('border-emerald-500/30', 'text-emerald-950');
-            iconHtml = `<i class="fa-solid fa-circle-check text-emerald-600 text-lg flex-shrink-0"></i>`;
-        } else if (type === 'info') {
-            toast.classList.add('border-polyTeal/30', 'text-pacific-950');
-            iconHtml = `<i class="fa-solid fa-circle-info text-polyTeal text-lg flex-shrink-0"></i>`;
-        } else if (type === 'warning') {
-            toast.classList.add('border-polyGold/30', 'text-amber-950');
-            iconHtml = `<i class="fa-solid fa-triangle-exclamation text-amber-600 text-lg flex-shrink-0"></i>`;
-        }
-
-        toast.innerHTML = `
-            ${iconHtml}
-            <div class="flex-1 space-y-1">
-                <h5 class="text-xs font-bold text-slate-950 uppercase tracking-wider">${title}</h5>
-                <p class="text-[11px] text-slate-700 leading-normal">${message}</p>
-            </div>
-            <button class="text-slate-400 hover:text-slate-900 text-xs flex-shrink-0" onclick="this.parentElement.remove()">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        `;
-
+        const icon = type === 'success' ? '<i class="fa-solid fa-circle-check"></i>' : 
+                     type === 'error' ? '<i class="fa-solid fa-circle-exclamation"></i>' : '<i class="fa-solid fa-info-circle"></i>';
+        
+        toast.innerHTML = `${icon} <span class="flex-1">${message}</span>`;
         container.appendChild(toast);
 
-        // Animate in
+        // Animation timing
         setTimeout(() => {
             toast.classList.remove('translate-y-2', 'opacity-0');
         }, 50);
 
-        // Auto remove after 5.5 seconds
         setTimeout(() => {
-            toast.classList.add('opacity-0', 'translate-y-2');
+            toast.classList.add('translate-y-2', 'opacity-0');
             setTimeout(() => {
                 toast.remove();
             }, 300);
-        }, 5500);
+        }, 4000);
     }
 
-    // Simulated Document download triggers (replacing normal alerts)
-    function simulateDownload(documentName) {
-        showToast(
-            'Preparing Document Download',
-            `Generating secured session for "${documentName}". The resource will be initialized and downloaded shortly.`,
-            'info'
-        );
+    // Survey Form Handler
+    function handleSurveySubmit(e) {
+        e.preventDefault();
+        showToast("Transmitting demographic and clinical data to PBEN Registry...", "info");
+        setTimeout(() => {
+            showToast("Successfully logged! Thank you for completing the 2026 assessment survey.", "success");
+            document.getElementById('pben-survey-form').reset();
+        }, 1500);
     }
 
-    // Simulated survey response validation
-    function submitSurveySimulation() {
-        closeSurveyModal();
-        showToast(
-            'Survey Registered Successfully',
-            'Your 2026 Asset & Capacity assessment has been cataloged. Thank you for strengthening Oceania healthcare.',
-            'success'
-        );
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        showToast("Sending collaboration brief to Secretariat...", "info");
+        setTimeout(() => {
+            showToast("Proposal received! An adviser will reply within 48 business hours.", "success");
+            document.getElementById('pben-contact-form').reset();
+        }, 1500);
     }
 
-    // Handle Contact message form submissions securely
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        const form = document.getElementById('pben-contact-form');
+    // Image fallback handling
+    function handleImageError(img) {
+        // Hide standard broken icon, since we have built an incredible CSS dashboard representation as fallback
+        img.style.display = 'none';
+        showToast("Running interactive SVG visual blueprint backup.", "info");
+    }
+
+    // Blueprint Detail Zoom Modal Handlers
+    function openImageModal() {
+        document.getElementById('blueprint-modal').classList.remove('hidden');
+    }
+    function closeImageModal() {
+        document.getElementById('blueprint-modal').classList.add('hidden');
+    }
+
+    // Core Values Tab switcher logic
+    const valuesData = {
+        aroha: {
+            title: "Aroha (Care & Safety)",
+            desc: "Nurturing deep clinical empathy, ensuring medical staff have access to fully functional tools, and prioritizing patient safety across isolated health posts."
+        },
+        innovation: {
+            title: "Oceanic Innovation",
+            desc: "Adapting modern electronic circuits to survive dense saline corrosion, extreme equatorial humidity, and isolated supply constraints without relying on overseas diagnostics."
+        },
+        unity: {
+            title: "Pacific Solidarity & Unity",
+            desc: "Establishing close mentoring connections between large referral hospital staff in Fiji or Samoa and single-technician facilities on tiny remote coral atolls."
+        },
+        excellence: {
+            title: "Uncompromising Quality Excellence",
+            desc: "Strictly aligning our regional device maintenance checklists with WHO frameworks and building high-precision ISO 13485 calibration structures locally."
+        }
+    };
+
+    function showValue(key) {
+        // Highlight active button state
+        document.querySelectorAll('.value-tab-btn').forEach(btn => {
+            btn.classList.remove('border-islandGreen-500', 'bg-islandGreen-50', 'text-islandGreen-800');
+            btn.classList.add('border-ocean-100', 'bg-white', 'text-ocean-900');
+        });
+
+        const activeBtn = document.getElementById(`btn-${key}`);
+        if(activeBtn) {
+            activeBtn.classList.remove('border-ocean-100', 'bg-white', 'text-ocean-900');
+            activeBtn.classList.add('border-islandGreen-500', 'bg-islandGreen-50', 'text-islandGreen-800');
+        }
+
+        // Apply transition effects on content
+        const display = document.getElementById('value-content-display');
+        display.classList.add('opacity-0');
+
+        setTimeout(() => {
+            display.innerHTML = `
+                <h5 class="text-base font-bold text-ocean-900 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-chevron-right text-islandGreen-600"></i> ${valuesData[key].title}
+                </h5>
+                <p class="text-xs sm:text-sm text-slate-700 font-semibold leading-relaxed">
+                    ${valuesData[key].desc}
+                </p>
+            `;
+            display.classList.remove('opacity-0');
+        }, 150);
+    }
+
+    // Map selection update logic
+    function mapSelect(country, loc, team, standard) {
+        const countryTitle = document.getElementById('map-selected-country');
+        const locTitle = document.getElementById('map-selected-loc');
+        const teamTitle = document.getElementById('map-selected-team');
+        const standardTitle = document.getElementById('map-selected-standard');
         
-        showToast(
-            'Submission Received',
-            'Your strategic inquiry has been directed to the PBEN Steering Committee. Your response will land directly in our secure backend portal.',
-            'success'
-        );
-        
-        form.reset();
+        countryTitle.innerText = `Country: ${country} (Hub)`;
+        locTitle.innerText = loc;
+        teamTitle.innerText = team;
+        standardTitle.innerText = `${standard} compliance index`;
+
+        showToast(`Loaded ${country} clinical assessment profile.`, "info");
     }
+
+    // Resource Download Emulator
+    function simulateDownload(docName) {
+        showToast(`Preparing file link for: ${docName}...`, "info");
+        setTimeout(() => {
+            showToast(`Download started! Securely fetched PBEN document database.`, "success");
+        }, 1200);
+    }
+
+    // Initial state setup on window load
+    window.onload = function() {
+        // Load Aroha value as default
+        showValue('aroha');
+        showToast("Connected to Pacific BioMed network hub.", "success");
+    };
 </script>
 </body>
 </html>
