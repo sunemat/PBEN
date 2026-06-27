@@ -13,60 +13,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
-    <script>
+        <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Syne', 'sans-serif'],
-                    },
                     colors: {
-                        pacific: {
-                            50: '#f0fdfa',  // Minty white
-                            100: '#ccfbf1', // Soft light seafoam
-                            200: '#99f6e4', // Clear ocean shallow
-                            300: '#5eead4', // Teal highlight
-                            400: '#2dd4bf', 
-                            500: '#14b8a6', // Core Lagoon Teal
-                            600: '#0d9488', // Deep seafoam green
-                            700: '#0f766e', // Dark ocean green
-                            800: '#115e59', // High-contrast text ocean green
-                            900: '#134e4a', // Darkest tropical forest/teal
-                            950: '#022c22', // Abyssal green
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#06122c', // Deep oceanic dark
                         },
-                        polyGold: '#B45309', // High contrast amber-gold (warm Polynesian sun)
-                        polyTeal: '#0D9488', // Coral reef teal
+                        pacific: {
+                            teal: '#0d9488',
+                            foam: '#14b8a6',
+                            coral: '#f43f5e',
+                            gold: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Polynesian-inspired wave background styles modified for light mode */
-        .poly-pattern-bg {
-            background-image: radial-gradient(rgba(13, 148, 136, 0.12) 1.5px, transparent 0), radial-gradient(rgba(20, 184, 166, 0.08) 1.5px, transparent 0);
-            background-size: 32px 32px;
-            background-position: 0 0, 16px 16px;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #06122c;
+            color: #f0f9ff;
+            scroll-behavior: smooth;
         }
-        
-        /* Custom scrollbar optimized for light seafoam theme */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #e6f4f1;
+            background: #06122c;
         }
         ::-webkit-scrollbar-thumb {
-            background: #5eead4;
-            border-radius: 5px;
+            background: #0369a1;
+            border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #0d9488;
+            background: #0ea5e9;
+        }
+        /* Polynesian tribal repeating border mask simulation */
+        .polynesian-border {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20' viewBox='0 0 40 20'%3E%3Cpath d='M0 10 L10 0 L20 10 L30 0 L40 10 L30 20 L20 10 L10 20 Z' fill='none' stroke='%2300bcd4' stroke-width='1.5' stroke-opacity='0.2'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
         }
     </style>
 </head>
-<body class="bg-gradient-to-b from-[#eafcf8] via-[#f0fdfa] to-[#e4f7f2] text-slate-800 font-sans antialiased overflow-x-hidden">
 
 <!-- Sticky Navigation Bar -->
 <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#eafcf8]/80 backdrop-blur-md border-b border-pacific-200/50">
